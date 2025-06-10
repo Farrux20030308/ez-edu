@@ -1,0 +1,18 @@
+.banner{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: space-between;
+
+}
+.banner__text{
+    width: 540px;
+    font-family: 'Roboto';
+font-weight: 900;
+font-size: 65px;
+line-height: 108%;
+background: linear-gradient(338deg, #01b3ff 0%, #006efc 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}

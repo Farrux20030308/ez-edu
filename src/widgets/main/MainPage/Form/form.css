@@ -1,0 +1,244 @@
+.form-container {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 25px 35px;
+  width: max-content;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-container h2 {
+  width: 380px;
+  font-family: var(--font-family);
+font-style: italic;
+font-weight: 700;
+font-size: 25px;
+line-height: 92%;
+color: #000;
+
+}
+
+.form-container .highlight {
+  background: linear-gradient(90deg, #0069fd 0%, #00cad8 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+ flex-direction: column;
+  margin-bottom: 12px;
+  gap: 20px;
+}
+
+
+
+.input-group input {
+  width: 270px;
+  flex: 1;
+  padding: 13px 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+.input-group .phone-input {
+  
+    display: flex;
+    align-items: center;
+  
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    
+
+}
+
+.PhoneInput{ 
+  width: 100%;
+  width: 270px;
+    flex: 1;
+    border: 1px solid #ccc !important;
+    border-radius: 14px;
+ 
+}
+
+.PhoneInput .PhoneInputCountry{
+    border: 1px solid #000;
+border-radius: 14px;
+
+height: 47px;
+padding: 10px;
+    box-shadow: inset 0 0 16px 0 rgba(0, 0, 0, 0.25) !important;
+background: rgba(255, 255, 255, 0.06) !important;
+}
+
+
+.submit-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.PhoneInputInput{
+    border: none !important;
+    outline: none !important;
+}
+
+.dropdown-container {
+  width: 100% !important;
+  position: relative;
+  width: fit-content;
+  font-family: sans-serif;
+}
+
+.dropdown-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: white;
+}
+
+.dropdown-display span {
+  padding: 10px 15px;
+}
+
+.dropdown-arrow {
+  border: 1px solid #000;
+border-radius: 14px;
+width: 49px;
+height: 47px;
+box-shadow: inset 0 0 16px 0 rgba(0, 0, 0, 0.25);
+background: #4595ff;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.dropdown-arrow svg {
+  width: 20px;
+  height: 14px;
+  
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  
+  right: 0;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 14px;
+  margin-top: 5px;
+  list-style: none;
+  padding: 0;
+  z-index: 10;
+}
+
+.dropdown-menu li {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 14px;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}
+.form__group{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.dropdown__wrapper{
+  width: 100%;
+  margin-top: -15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* form.css */
+
+/* Основной контейнер формы */
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Красная рамка для ошибки */
+.input-error {
+  border: 2px solid red !important;
+  border-radius: 14px;
+}
+
+/* Spinner */
+.spinner-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Модалка */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal {
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.modal p {
+  margin-bottom: 20px;
+}
+
+.modal button {
+  padding: 8px 16px;
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background: #155ab6;
+}

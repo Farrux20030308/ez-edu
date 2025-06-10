@@ -1,0 +1,80 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 24px 24px;
+    background-color: inherit;
+    backdrop-filter: blur(1px);
+    padding: 0 54px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.header .link_list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+.header .link_list li a{
+font-family: 'Roboto';
+font-weight: 500;
+font-size: 18px;
+line-height: 375%;
+text-align: center;
+color: #000;
+text-decoration: none;
+transition: 0.7s ease-in-out;
+}
+.header .link_list li{
+    transition: 0.5s ease-in-out
+}
+
+.header .link_list li a:hover{
+    color: #0072ff;
+}
+.header .link_list li:hover{
+    transform: scale(1.2);
+
+}
+.logo img{
+    height: 100px;
+}
+
+ 
+.shadow__btn {
+    
+  background: linear-gradient(180deg, #00c6ff 0%, #0072ff 100%);
+  border: none;
+  border-radius: 20px; /* примерно как на твоем макете */
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 18px 45px;
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-size: 24px;
+  text-align: center;
+  color: #fff;
+}
+
+.shadow__btn:hover {
+    box-shadow: 0 -4px -12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, #00b0e8 0%, #3b9aff 100%);
+  text-shadow: 0 0 10px #00faff, 0 0 20px white;
+}
+.shadow__btn {
+  box-shadow: 0 0 10px #00faff, 0 0 20px white;
+  color: #fff !important;
+}
+
+
+
+
+
