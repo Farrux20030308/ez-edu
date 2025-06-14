@@ -1,0 +1,66 @@
+
+
+.for__who{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #9f9f9f;
+border-radius: 27px;
+padding: 22px;
+backdrop-filter: blur(3px);
+box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.25);
+background: rgba(255, 255, 255, 0.01);
+gap: 35px;
+
+}
+.for__who h2{
+    font-family: 'Roboto';
+font-weight: 700;
+font-size: 48px;
+line-height: 156%;
+color: #000;
+text-align: left;
+}
+
+.for__who-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+
+.for__who-box{
+    border: 1px solid #9f9f9f;
+border-radius: 14px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 15px 50px 20px 50px;
+box-shadow: inset 0 0 16px 0 rgba(0, 0, 0, 0.25);
+background: #fff;
+
+height: 100%;
+}
+.for__who-box img{
+    width: 250px;
+}
+
+.for__who-box h3{
+    font-family: 'Roboto';
+font-weight: 700;
+font-size: 32px;
+line-height: 234%;
+text-align: center;
+color: #000;
+}
+
+.for__who-box p{
+    font-family: 'Roboto';
+font-weight: 700;
+width: 315px;
+font-size: 16px;
+line-height: 100%;
+text-align: center;
+color: #000;
+}

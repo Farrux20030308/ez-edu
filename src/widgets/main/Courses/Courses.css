@@ -1,0 +1,148 @@
+
+
+.courses {
+  margin-top: 155px;
+  display: flex;
+  flex-direction: column;
+    justify-content: center;
+    border: 1px solid #9f9f9f;
+border-radius: 27px;
+padding: 22px;
+backdrop-filter: blur(3px);
+box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.25);
+background: rgba(255, 255, 255, 0.01);
+gap: 35px;
+
+}
+
+.courses h2{
+    font-family: 'Roboto Flex';
+font-weight: 700;
+font-size: 48px;
+line-height: 156%;
+color: #000;
+}
+
+.courses-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.courses-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  background: #fff;
+  cursor: pointer;
+  width: 100%;
+  max-width: 330px;
+  transition: gap 0.4s ease, flex-direction 0.4s ease,;
+  height: 400px;
+}
+
+.courses-box.expanded {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 100%;
+}
+
+.courses-box-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.courses-box-left img {
+  width: 100%;
+  max-width: 250px;
+  transition: max-width 0.3s ease;
+}
+.courses-box-left .image.expanded{
+    max-width: 150px;
+}
+.courses-box-left h3 {
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 234%;
+  text-align: center;
+  color: #000;
+}
+
+.courses-box-left p {
+  font-family: 'Roboto';
+  font-size: 14px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.courses-box-meta {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 150%;
+  color: #000;
+  margin-top: 15px;
+}
+
+.courses-box-meta li {
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.courses-box-meta li img {
+  width: 15px !important;
+}
+
+/* Детали по курсу */
+.courses-box-details {
+opacity: 0;
+  
+  flex-direction: row;
+  transform: scale(0);
+  transition: max-width 0.9s ease, transform 0.3s ease;
+}
+
+.courses-box.expanded .courses-box-details {
+  opacity: 1;
+  max-width: 714px;
+  transform: scaleX(1);
+  max-height: 100%;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 26px;
+
+}
+
+.courses-box-details p {
+  margin: 10px 0;
+  font-family: 'Roboto Flex';
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 125%;
+  color: #000;
+}
+
+.courses-box-details p strong {
+  font-family: 'Roboto Flex';
+  font-weight: 900;
+}
+
+.courses-box-details ol {
+  padding-left: 20px;
+}
+
+.hidden {
+  display: none;
+}

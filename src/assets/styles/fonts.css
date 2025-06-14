@@ -27,3 +27,10 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'RobotoFlex';
+  src: url('../Fonts/RobotoFlex-VariableFont_GRAD\,XOPQ\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf') format('truetype');
+  font-weight: 100 1000; 
+  font-stretch: 75% 125%; 
+  font-style: normal italic; 
+}

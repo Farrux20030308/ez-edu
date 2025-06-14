@@ -4,9 +4,11 @@
     box-sizing: border-box;
 }
 body{
-  height: 1900px;
-  background: url(./assets//icons/bg.jpg);
+  min-height: 250vh;
+  background: url(./assets//img/bg.jpg);
+  background-attachment: fixed;
   background-size: contain;
+  font-family: 'Roboto Flex' !important;
 }
 ul{
   list-style: none;  
