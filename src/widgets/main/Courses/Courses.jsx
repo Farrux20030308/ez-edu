@@ -1,5 +1,5 @@
 import './Courses.css';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import backpack from '../../../assets/img/backpack.png';
 import laptop from '../../../assets/img/laptop.png';
 import paper from '../../../assets/img/paper.png';
@@ -9,38 +9,25 @@ import cap from '../../../assets/icons/cap.svg';
 import format from '../../../assets/icons/format.svg';
 import time from '../../../assets/icons/time.svg';
 
-const Courses = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
-  const [showMetaIndex, setShowMetaIndex] = useState(null);
-  const wrapperRef = useRef(null);
-
-const handleCardClick = (index) => {
-  if (activeIndex === index) {
-    // Закрытие карточки
-    setActiveIndex(null);
-    setShowMetaIndex(null);
-  } else {
-    // Открытие карточки
-    setActiveIndex(index);
-    setShowMetaIndex(null); // сбросим мета
-    setTimeout(() => {
-      setShowMetaIndex(index); // показать мета через 300мс
-    }, 300);
-  }
-};
-
+const Typewriter = ({ text, speed = 30 }) => {
+  const [displayed, setDisplayed] = useState('');
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
-        setActiveIndex(null);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+    let i = 0;
+    const interval = setInterval(() => {
+      setDisplayed((prev) => prev + text.charAt(i));
+      i++;
+      if (i >= text.length) clearInterval(interval);
+    }, speed);
+    return () => clearInterval(interval);
+  }, [text, speed]);
+
+  return <span>{displayed}</span>;
+};
+
+const Courses = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+  const cardRefs = useRef([]);
 
   const CoursesData = [
     {
@@ -109,61 +96,85 @@ const handleCardClick = (index) => {
     },
   ];
 
-  const renderCard = (item, index) => {
-    const isActive = activeIndex === index;
+  const handleCardClick = (index) => {
+    const currentRef = cardRefs.current[index];
+    const firstRect = currentRef.getBoundingClientRect();
 
-    return (
-      <div
-        className={`courses-box ${isActive ? 'expanded' : ''}`}
-        key={index}
-        onClick={() => {
-  if (isActive) {
-    setActiveIndex(null);
-    setShowMetaIndex(null); 
-  } else {
-    setActiveIndex(index); 
-    setShowMetaIndex(null); 
-    setTimeout(() => setShowMetaIndex(index), 300); 
-  }
-}}
-      >
-        <div className="courses-box-left">
-          <img className={`image ${isActive ? 'expanded' : ''}`} src={item.img} alt={item.title} />
-          <h3>{item.title}</h3>
-          {!isActive && <p>{item.text}</p>}
-            
-            {activeIndex === index && showMetaIndex === index && (
-  <ul className="courses-box-meta">
-    <li><img src={calendar} alt="" /> {item.duration}</li>
-    <li><img src={time} alt="" /> {item.time}</li>
-    <li><img src={format} alt="" /> {item.format}</li>
-    <li><img src={cap} alt="" /> {item.age}</li>
-  </ul>
-)}
+    // Меняем активный индекс
+    setActiveIndex((prev) => {
+      return prev === index ? null : index;
+    });
 
-        </div>
+    requestAnimationFrame(() => {
+      const lastRect = currentRef.getBoundingClientRect();
+      const deltaX = firstRect.left - lastRect.left;
+      const deltaY = firstRect.top - lastRect.top;
 
-        <div className="courses-box-details">
-          <p><strong>Краткое описание:</strong> {item.description}</p>
-          <p><strong>Ключевые отличия:</strong></p>
-          <ol>
-            {item.features.map((feature, i) => (
-              <li key={i}>{feature}</li>
-            ))}
-          </ol>
-        </div>
-      </div>
-    );
+      currentRef.style.transition = 'none';
+      currentRef.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+      currentRef.offsetHeight; // Reflow
+
+      currentRef.style.transition = 'transform 0.4s ease';
+      currentRef.style.transform = 'translate(0, 0)';
+
+      setTimeout(() => {
+        currentRef.style.transform = '';
+      }, 400);
+    });
   };
 
   return (
     <div className="courses container">
       <h2>Наши курсы</h2>
-      <div className="courses-wrapper" ref={wrapperRef}>
-        {activeIndex === null
-  ? CoursesData.map((item, index) => renderCard(item, index))
-  : renderCard(CoursesData[activeIndex], activeIndex)}
+      <div className="courses-wrapper">
+        {(activeIndex === null
+          ? CoursesData
+          : [CoursesData[activeIndex]]
+        ).map((item, index) => {
+          const realIndex = activeIndex === null ? index : activeIndex;
+          return (
+            <div
+              key={realIndex}
+              className={`courses-box ${activeIndex === realIndex ? 'expanded' : ''}`}
+              ref={(el) => (cardRefs.current[realIndex] = el)}
+              onClick={() => handleCardClick(realIndex)}
+            >
+              <div className="courses-box-left">
+                <img
+                  className={`image ${
+                    activeIndex === realIndex ? 'expanded' : ''
+                  } ${!activeIndex && (realIndex === 2 || realIndex === 3) ? 'blurred' : ''}`}
+                  src={item.img}
+                  alt={item.title}
+                />
+                <h3>{item.title}</h3>
+                {activeIndex !== realIndex && <p>{item.text}</p>}
 
+                <ul className={`courses-box-meta ${activeIndex === realIndex ? 'expanded' : ''}`}>
+                  <li><img src={calendar} alt="" /> {item.duration}</li>
+                  <li><img src={time} alt="" /> {item.time}</li>
+                  <li><img src={format} alt="" /> {item.format}</li>
+                  <li><img src={cap} alt="" /> {item.age}</li>
+                </ul>
+              </div>
+
+              <div className="courses-box-details">
+                <p>
+                  <strong>Краткое описание:</strong>{' '}
+                  <Typewriter text={item.description} speed={25} />
+                </p>
+                <p><strong>Ключевые отличия:</strong></p>
+                <ol>
+                  {item.features.map((feature, i) => (
+                    <li key={i}>
+                      <Typewriter text={feature} speed={25} />
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
