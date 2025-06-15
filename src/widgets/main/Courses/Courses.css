@@ -40,7 +40,7 @@
   cursor: pointer;
   width: 100%;
   max-width: 330px;
-  height: 400px;
+  height: 350px;
   transition: none;
   position: relative;
   z-index: 1;
@@ -117,11 +117,12 @@
   overflow: hidden;
   visibility: hidden;
   transition: all 0.4s ease;
+
 }
 
 .courses-box-meta.expanded {
   visibility: visible;
-  height: 114px;
+  height: 134px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 15px;
