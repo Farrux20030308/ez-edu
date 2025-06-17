@@ -1,6 +1,6 @@
 .form-container {
   background: white;
-  border: 1px solid #ccc;
+  border: 1px solid #9f9f9f;
   border-radius: 14px;
   padding: 25px 35px;
   width: max-content;
@@ -47,7 +47,7 @@
   width: 100%;
   flex: 1;
   padding: 13px 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #9f9f9f;
   border-radius: 14px;
   outline: none;
 }
@@ -55,7 +55,7 @@
 .input-group .phone-input {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid #9f9f9f;
   border-radius: 14px;
   overflow: hidden;
 }
@@ -67,7 +67,7 @@
 .PhoneInput {
   width: 100%;
   flex: 1;
-  border: 1px solid #ccc !important;
+  border: 1px solid #9f9f9f !important;
   border-radius: 14px;
 }
 
