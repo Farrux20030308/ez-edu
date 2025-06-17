@@ -194,7 +194,7 @@
   z-index: -1;
   opacity: 0;
   transform: translateY(-100px);
-  transition: opacity 0.8s linear, transform 2s linear;
+  transition: opacity .6s linear, transform .6s linear;
   pointer-events: none; /* чтобы не кликовалось до показа */
 }
 
