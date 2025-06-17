@@ -103,7 +103,7 @@
 .courses-box-left h3 {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 27px;
+  font-size: 32px;
   line-height: 234%;
   text-align: center;
   color: #000;
@@ -112,11 +112,12 @@
 }
 
 .courses-box-left p {
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  color: #333;
-  margin-top: 10px;
-  text-align: center;
+  font-family: 'Roboto Flex';
+font-weight: 700;
+font-size: 16px;
+line-height: 100%;
+text-align: center;
+color: #000;
 }
 
 .courses-box-meta {
