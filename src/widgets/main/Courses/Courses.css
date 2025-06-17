@@ -193,7 +193,7 @@
 .courses-box-meta {
   z-index: -1;
   opacity: 0;
-  transform: translateY(-120px);
+  transform: translateY(-100px);
   transition: opacity 0.8s linear, transform 2s linear;
   pointer-events: none; /* чтобы не кликовалось до показа */
 }
