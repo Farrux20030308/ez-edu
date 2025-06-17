@@ -2,6 +2,7 @@ import Courses from './Courses/Courses';
 import ForWho from './ForWho/ForWho';
 import './Main.css'
 import Banner from './MainPage/Banner';
+import Reviews from './Reviews/Reviews';
 
 
 const Main=()=>{
@@ -10,6 +11,7 @@ const Main=()=>{
         <Banner />
         <ForWho />
         <Courses />
+        <Reviews />
         </>
     )
 }
