@@ -118,7 +118,7 @@
       setExpandedIndex(index);
       setTimeout(() => {
         setShowDetailsIndex(index);
-      }, 700); // задержка перед появлением details (можно настроить)
+      }, 900); // задержка перед появлением details (можно настроить)
     }, delay);
   });
 };
