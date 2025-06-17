@@ -1,32 +1,11 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Reviews.css';
 import teacher from '../../../assets/icons/teacher_icon.svg';
 import time from '../../../assets/icons/time_icon.svg';
 import cap from '../../../assets/icons/cap_icon.svg';
-import { useEffect, useRef } from 'react';
-
 
 const reviews = [
-    
   {
-    name: 'Irina',
-    text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
-    age: '12 лет',
-    teacher: 'Mr. Owen',
-    duration: '1 месяц',
-  }, {
-    name: 'Irina',
-    text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
-    age: '12 лет',
-    teacher: 'Mr. Owen',
-    duration: '1 месяц',
-  }, {
-    name: 'Irina',
-    text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
-    age: '12 лет',
-    teacher: 'Mr. Owen',
-    duration: '1 месяц',
-  }, {
     name: 'Irina',
     text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
     age: '12 лет',
@@ -47,43 +26,89 @@ const reviews = [
     teacher: 'Mr. Owen',
     duration: '1 месяц',
   },
+  {
+    name: 'Irina',
+    text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
+    age: '12 лет',
+    teacher: 'Mr. Owen',
+    duration: '1 месяц',
+  },
+  {
+    name: 'Irina',
+    text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
+    age: '12 лет',
+    teacher: 'Mr. Owen',
+    duration: '1 месяц',
+  },
+  {
+    name: 'Irina',
+    text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
+    age: '12 лет',
+    teacher: 'Mr. Owen',
+    duration: '1 месяц',
+  },
 ];
 
-const getRandomColor = () => {
+const nameColorMap = {}; // Запоминаем цвета для имён
+
+const getColorForName = (name) => {
+  if (nameColorMap[name]) return nameColorMap[name];
   const colors = ['0069fd', '00cad8', 'ffa500', '8a2be2', '00b894', 'ff6b6b'];
-  return colors[Math.floor(Math.random() * colors.length)];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  nameColorMap[name] = randomColor;
+  return randomColor;
 };
 
 const ReviewCard = () => {
-    const scrollRef = useRef(null);
-   useEffect(() => {
-  const container = scrollRef.current;
+  const scrollRef = useRef(null);
 
-  const onWheel = (e) => {
-  const container = scrollRef.current;
+  useEffect(() => {
+    
 
-  // Если скролл вертикальный — скролим по горизонтали
-  if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-    e.preventDefault(); // блокируем вертикальный скролл страницы
-    container.scrollLeft += e.deltaY;
-  }
-};
-  if (container) {
-    container.addEventListener('wheel', onWheel, { passive: false });
-  }
+    const onMouseDown = (e) => {
+      isDown = true;
+      container.classList.add('active');
+      startX = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+    };
 
-  return () => {
-    if (container) {
-      container.removeEventListener('wheel', onWheel);
-    }
-  };
-}, []);
+    const onMouseLeave = () => {
+      isDown = false;
+      container.classList.remove('active');
+    };
+
+    const onMouseUp = () => {
+      isDown = false;
+      container.classList.remove('active');
+    };
+
+    const onMouseMove = (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      container.scrollLeft = scrollLeft - walk;
+    };
+
+    container.addEventListener('mousedown', onMouseDown);
+    container.addEventListener('mouseleave', onMouseLeave);
+    container.addEventListener('mouseup', onMouseUp);
+    container.addEventListener('mousemove', onMouseMove);
+
+    return () => {
+      container.removeEventListener('mousedown', onMouseDown);
+      container.removeEventListener('mouseleave', onMouseLeave);
+      container.removeEventListener('mouseup', onMouseUp);
+      container.removeEventListener('mousemove', onMouseMove);
+    };
+  }, []);
+
   return (
     <div className="reviews">
       <h2>Отзывы</h2>
       <div className="reviews-card-wrapper" ref={scrollRef}>
         {reviews.map((review, index) => {
-          const bgColor = getRandomColor();
+          const bgColor = getColorForName(review.name);
           return (
             <div key={index} className="review-card">
               <div className="review-card-header">
@@ -99,9 +124,15 @@ const ReviewCard = () => {
               <div className="review-content">
                 <p>{review.text}</p>
                 <ul className="review-meta">
-                  <li><img src={cap} alt="" /> {review.age}</li>
-                  <li><img src={teacher} alt="" /> {review.teacher}</li>
-                  <li><img src={time} alt="" /> {review.duration}</li>
+                  <li>
+                    <img src={cap} alt="" /> {review.age}
+                  </li>
+                  <li>
+                    <img src={teacher} alt="" /> {review.teacher}
+                  </li>
+                  <li>
+                    <img src={time} alt="" /> {review.duration}
+                  </li>
                 </ul>
               </div>
             </div>

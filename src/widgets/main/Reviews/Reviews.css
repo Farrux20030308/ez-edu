@@ -39,10 +39,9 @@ color: #000;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
-
-
+cursor: grab;
     gap: 24px;
-padding-inline: 115px;
+padding-inline: 250px;
 
 }
 
@@ -68,6 +67,8 @@ text-align: center;
 color: #000;
 }
 .review-card {
+    user-select: none;
+  -webkit-user-drag: none;
   background: white;
   border: 1px solid #ccc;
 
@@ -86,6 +87,7 @@ color: #000;
   height: 48px;
   border-radius: 50%;
   flex-shrink: 0;
+  
 }
 
 .review-content p {
@@ -107,4 +109,7 @@ color: #000;
     display: flex;
     align-items: center;
     gap: 5px;
+}
+.reviews-card-wrapper.dragging {
+  cursor: grabbing;
 }
