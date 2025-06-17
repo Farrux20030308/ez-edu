@@ -9,26 +9,16 @@
   import format from '../../../assets/icons/format.svg';
   import time from '../../../assets/icons/time.svg';
 
-  const Typewriter = ({ text, speed = 50 }) => {
-    const [displayed, setDisplayed] = useState('');
 
-    useEffect(() => {
-      let i = 0;
-      const interval = setInterval(() => {
-        setDisplayed((prev) => prev + text.charAt(i));
-        i++;
-        if (i >= text.length) clearInterval(interval);
-      }, speed);
-      return () => clearInterval(interval);
-    }, [text, speed]);
 
-    return <span>{displayed}</span>;
-  };
+  
 
   const Courses = () => {
     const [activeIndex, setActiveIndex] = useState(null); 
     const [expandedIndex, setExpandedIndex] = useState(null); 
     const cardRefs = useRef([]);
+    const [showDetailsIndex, setShowDetailsIndex] = useState(null);
+
 
     const CoursesData = [
       {
@@ -99,6 +89,7 @@
   if (activeIndex === index) {
     setActiveIndex(null);
     setExpandedIndex(null);
+    setShowDetailsIndex(null);
     return;
   }
 
@@ -125,9 +116,13 @@
       currentRef.style.transition = '';
       currentRef.style.transform = '';
       setExpandedIndex(index);
+      setTimeout(() => {
+        setShowDetailsIndex(index);
+      }, 700); // задержка перед появлением details (можно настроить)
     }, delay);
   });
 };
+
 
 
     return (
@@ -164,22 +159,20 @@
                   </ul>
                 </div>
 
-                {isExpanded && (
-                  <div className="courses-box-details">
-                    <p>
-                      <strong>Краткое описание:</strong>{' '}
-                      <Typewriter text={item.description} speed={25} />
-                    </p>
-                    <p><strong>Ключевые отличия:</strong></p>
-                    <ol>
-                      {item.features.map((feature, i) => (
-                        <li key={i}>
-                          <Typewriter text={feature} speed={25} />
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
-                )}
+                {showDetailsIndex === index && (
+  <div className="courses-box-details">
+    <p>
+      <strong>Краткое описание:</strong> {item.description}
+    </p>
+    <p><strong>Ключевые отличия:</strong></p>
+    <ol>
+      {item.features.map((feature, i) => (
+        <li key={i}>{feature}</li>
+      ))}
+    </ol>
+  </div>
+)}
+
               </div>
             );
           })}
