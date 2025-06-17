@@ -109,9 +109,18 @@ console.log(result);
 
   return (
     <div className="form-container">
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <p>{modalMessage}</p>
+            <button onClick={() => setShowModal(false)}>ОК</button>
+          </div>
+        </div>
+      )}
       <h2>Запишитесь на <span className="highlight">бесплатный</span> пробный урок!</h2>
       <form onSubmit={handleSubmit} name="submit-to-google-sheet">
         <div className="form__group">
+          
           <div className="input-group">
             <input
               type="text"
@@ -220,16 +229,10 @@ console.log(result);
             "Записаться"
           )}
         </button>
+         
       </form>
 
-      {showModal && (
-        <div className="modal-overlay">
-          <div className="modal">
-            <p>{modalMessage}</p>
-            <button onClick={() => setShowModal(false)}>ОК</button>
-          </div>
-        </div>
-      )}
+     
     </div>
   );
 };

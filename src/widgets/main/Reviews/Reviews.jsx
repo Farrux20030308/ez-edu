@@ -1,12 +1,32 @@
 import React from 'react';
-import './Reviews.css'
-import teacher from '../../../assets/icons/teacher_icon.svg'
-import time from '../../../assets/icons/time_icon.svg'
-import cap from '../../../assets/icons/cap_icon.svg'
+import './Reviews.css';
+import teacher from '../../../assets/icons/teacher_icon.svg';
+import time from '../../../assets/icons/time_icon.svg';
+import cap from '../../../assets/icons/cap_icon.svg';
+import { useEffect, useRef } from 'react';
 
 
 const reviews = [
+    
   {
+    name: 'Irina',
+    text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
+    age: '12 лет',
+    teacher: 'Mr. Owen',
+    duration: '1 месяц',
+  }, {
+    name: 'Irina',
+    text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
+    age: '12 лет',
+    teacher: 'Mr. Owen',
+    duration: '1 месяц',
+  }, {
+    name: 'Irina',
+    text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
+    age: '12 лет',
+    teacher: 'Mr. Owen',
+    duration: '1 месяц',
+  }, {
     name: 'Irina',
     text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
     age: '12 лет',
@@ -27,31 +47,6 @@ const reviews = [
     teacher: 'Mr. Owen',
     duration: '1 месяц',
   },
-  {
-    name: 'Irina',
-    text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
-    age: '12 лет',
-    teacher: 'Mr. Owen',
-    duration: '1 месяц',
-  },{
-    name: 'Irina',
-    text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
-    age: '12 лет',
-    teacher: 'Mr. Owen',
-    duration: '1 месяц',
-  },{
-    name: 'Irina',
-    text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
-    age: '12 лет',
-    teacher: 'Mr. Owen',
-    duration: '1 месяц',
-  },{
-    name: 'Irina',
-    text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
-    age: '12 лет',
-    teacher: 'Mr. Owen',
-    duration: '1 месяц',
-  },
 ];
 
 const getRandomColor = () => {
@@ -60,39 +55,59 @@ const getRandomColor = () => {
 };
 
 const ReviewCard = () => {
+    const scrollRef = useRef(null);
+   useEffect(() => {
+  const container = scrollRef.current;
+
+  const onWheel = (e) => {
+  const container = scrollRef.current;
+
+  // Если скролл вертикальный — скролим по горизонтали
+  if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+    e.preventDefault(); // блокируем вертикальный скролл страницы
+    container.scrollLeft += e.deltaY;
+  }
+};
+  if (container) {
+    container.addEventListener('wheel', onWheel, { passive: false });
+  }
+
+  return () => {
+    if (container) {
+      container.removeEventListener('wheel', onWheel);
+    }
+  };
+}, []);
   return (
-    
     <div className="reviews">
-        <h2>Отзывы</h2>
-        <div className="reviews-card-wrapper">
-{reviews.map((review, index) => {
-        const bgColor = getRandomColor();
-        return (
-          <div key={index} className="review-card">
-            <div className="review-card-header">
-<img
-              src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
-                review.name
-              )}&background=${bgColor}&color=fff&format=png&rounded=true`}
-              alt="avatar"
-              className="review-avatar"
-            />
-              <strong>{review.name}</strong>
+      <h2>Отзывы</h2>
+      <div className="reviews-card-wrapper" ref={scrollRef}>
+        {reviews.map((review, index) => {
+          const bgColor = getRandomColor();
+          return (
+            <div key={index} className="review-card">
+              <div className="review-card-header">
+                <img
+                  src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
+                    review.name
+                  )}&background=${bgColor}&color=fff&format=png&rounded=true`}
+                  alt="avatar"
+                  className="review-avatar"
+                />
+                <strong>{review.name}</strong>
+              </div>
+              <div className="review-content">
+                <p>{review.text}</p>
+                <ul className="review-meta">
+                  <li><img src={cap} alt="" /> {review.age}</li>
+                  <li><img src={teacher} alt="" /> {review.teacher}</li>
+                  <li><img src={time} alt="" /> {review.duration}</li>
+                </ul>
+              </div>
             </div>
-            
-            <div className="review-content">
-              <p>{review.text}</p>
-              <ul className="review-meta">
-                <li><img src={cap} alt="" /> {review.age}</li>
-                <li> <img src={teacher} alt="" />{review.teacher}</li>
-                <li><img src={time} alt="" /> {review.duration}</li>
-              </ul>
-            </div>
-          </div>
-        );
-      })}
-        </div>
-      
+          );
+        })}
+      </div>
     </div>
   );
 };
