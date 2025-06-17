@@ -1,101 +1,96 @@
 .form-container {
   background: white;
   border: 1px solid #ccc;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 25px 35px;
   width: max-content;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
   margin: 0 !important;
+  max-width: 500px;
 }
 
 .form-container h2 {
-width: 380px;
-font-family: var(--font-family);
-font-style: italic;
-font-weight: 700;
-font-size: 25px;
-line-height: 92%;
-color: #000;
+  width: 380px;
+  font-family: var(--font-family);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 92%;
+  color: #000;
 }
 
 .form-container .highlight {
-background: linear-gradient(90deg, #0069fd 0%, #00cad8 100%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background: linear-gradient(90deg, #0069fd 0%, #00cad8 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .input-group {
   width: 100%;
   display: flex;
   align-items: center;
- flex-direction: column;
+  flex-direction: column;
   margin-bottom: 12px;
   gap: 20px;
 }
 
-
-
 .input-group input {
-  width: 270px;
-  
+  width: 100%;
   flex: 1;
   padding: 13px 10px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   outline: none;
 }
 
 .input-group .phone-input {
-  
-    display: flex;
-    align-items: center;
-  
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    
-
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  overflow: hidden;
 }
 
-.PhoneInput{ 
+.phoneInput {
   width: 100%;
-  width: 270px;
-    flex: 1;
-    border: 1px solid #ccc !important;
-    border-radius: 14px;
- 
 }
 
-.PhoneInput .PhoneInputCountry{
-    border: 1px solid #000;
-border-radius: 14px;
-
-height: 47px;
-padding: 10px;
-    box-shadow: inset 0 0 16px 0 rgba(0, 0, 0, 0.25) !important;
-background: rgba(255, 255, 255, 0.06) !important;
+.PhoneInput {
+  width: 100%;
+  flex: 1;
+  border: 1px solid #ccc !important;
+  border-radius: 14px;
 }
 
+.PhoneInput .PhoneInputCountry {
+  border: 1px solid #000;
+  border-radius: 14px;
+  height: 43px;
+  padding: 10px;
+  box-shadow: inset 0 0 16px 0 rgba(0, 0, 0, 0.25) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+.PhoneInputInput {
+  border: none !important;
+  outline: none !important;
+}
 
 .submit-button {
-    background: linear-gradient(39deg, #006dfc 0%, #00c6da 100%);
-    color: white;
-    border: none;
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.PhoneInputInput{
-    border: none !important;
-    outline: none !important;
+  background: linear-gradient(39deg, #006dfc 0%, #00c6da 100%);
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 .dropdown-container {
@@ -110,7 +105,7 @@ background: rgba(255, 255, 255, 0.06) !important;
   align-items: center;
   justify-content: space-between;
   border: 1px solid black;
-  border-radius: 20px;
+  border-radius: 14px;
   overflow: hidden;
   cursor: pointer;
   background-color: white;
@@ -122,28 +117,23 @@ background: rgba(255, 255, 255, 0.06) !important;
 
 .dropdown-arrow {
   border: 1px solid #000;
-border-radius: 14px;
-width: 49px;
-height: 47px;
-box-shadow: inset 0 0 16px 0 rgba(0, 0, 0, 0.25);
-background: #4595ff;
-display: flex;
-justify-content: center;
-align-items: center;
-
+  border-radius: 14px;
+  width: 49px;
+  height: 47px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dropdown-arrow svg {
   width: 20px;
   height: 14px;
-  
 }
 
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
-  
   right: 0;
   background-color: white;
   border: 1px solid black;
@@ -163,26 +153,21 @@ align-items: center;
 .dropdown-menu li:hover {
   background-color: #f0f0f0;
 }
-.form__group{
+
+.form__group {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  flex-direction: column;
+  gap: 20px;
   position: relative;
 }
 
-.dropdown__wrapper{
+.dropdown__wrapper {
   width: 100%;
   margin-top: -15px;
   display: flex;
-  flex-direction: column;
   gap: 15px;
-}
-
-.form-container {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
 }
 
 .input-error {
@@ -200,7 +185,7 @@ align-items: center;
 }
 
 .modal-overlay {
-  position:fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
