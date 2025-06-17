@@ -12,6 +12,12 @@ box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.25);
 background: rgba(255, 255, 255, 0.01);
 gap: 35px;
 height: 550px !important;
+transition: box-shadow .5s ease,scale .5s ease;
+}
+
+.for__who:hover{
+    scale: 1.02;
+box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.40);
 
 }
 .for__who h2{
@@ -42,7 +48,10 @@ box-shadow: inset 0 0 16px 0 rgba(0, 0, 0, 0.25);
 background: #fff;
 
 height: 100%;
+transition: box-shadow .5s ease, scale .5s ease;
 }
+
+
 .for__who-box img{
     width: 250px;
 }

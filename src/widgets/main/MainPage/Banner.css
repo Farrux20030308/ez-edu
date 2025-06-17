@@ -20,6 +20,13 @@
     flex-wrap: wrap;
     row-gap: 50px;
     z-index: 1;
+transition: box-shadow .5s ease,scale .5s ease;
+
+}
+
+.banner:hover{
+box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.40);
+scale: 1.02;
 }
 .banner__text{
     width: 540px;

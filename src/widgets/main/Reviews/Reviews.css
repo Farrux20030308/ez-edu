@@ -11,8 +11,15 @@ box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.25);
 background: rgba(255, 255, 255, 0.01);
 gap: 35px;
 margin-top: 55px;
-min-height: 460px;
+min-height: 550px;
 width: 100%;
+transition: box-shadow .5s ease,scale .5s ease;
+
+}
+
+.reviews:hover{
+    scale: 1.02;
+box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.40);
 
 }
 
@@ -32,7 +39,7 @@ color: #000;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
-  cursor: grab;
+
 
     gap: 24px;
 padding-inline: 115px;
