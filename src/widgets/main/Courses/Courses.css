@@ -79,12 +79,15 @@
   align-items: center;
   width: 250px;
   flex-shrink: 0;
+  
 }
 
 .courses-box-left img {
   width: 100%;
   max-width: 150px;
   transition: filter 0.3s ease, max-width 0.3s ease;
+  background: white;
+  
 }
 
 .image.blurred {
@@ -102,6 +105,8 @@
   line-height: 234%;
   text-align: center;
   color: #000;
+  background: white;
+  width: 100%;
 }
 
 .courses-box-left p {
@@ -184,4 +189,18 @@
 
 .hidden {
   display: none;
+}
+.courses-box-meta {
+  z-index: -1;
+  opacity: 0;
+  transform: translateY(-120px);
+  transition: opacity 0.8s linear, transform 2s linear;
+  pointer-events: none; /* чтобы не кликовалось до показа */
+}
+
+.courses-box-meta.expanded {
+ 
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
