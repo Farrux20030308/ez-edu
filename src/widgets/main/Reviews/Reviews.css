@@ -18,7 +18,7 @@ width: 100%;
 .reviews-card-wrapper{
     display: flex;
     gap: 24px;
-padding-left: 115px;
+padding-inline: 115px;
 
     overflow-x: scroll;
 }
