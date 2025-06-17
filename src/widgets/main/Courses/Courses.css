@@ -11,6 +11,7 @@
   background: rgba(255, 255, 255, 0.01);
   gap: 35px;
   overflow: hidden;
+  height: 550px;
 }
 
 .courses h2 {
