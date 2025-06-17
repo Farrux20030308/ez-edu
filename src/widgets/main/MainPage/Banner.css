@@ -11,15 +11,15 @@
 .banner{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    backdrop-filter: blur(4px);
+    justify-content: space-between;
+    backdrop-filter: blur(5px);
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.25);
-    min-height: 520px;
     border-radius: 27px;
     border: 1px solid #9f9f9f;
     flex-wrap: wrap;
     row-gap: 50px;
     z-index: 1;
+    padding: 20px;
     
 }
 
@@ -28,6 +28,7 @@ box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.40);
 scale: 1.02;
 }
 .banner__text{
+    padding: 16px;
     width: 540px;
     font-family: 'Roboto Flex';
 font-weight: 900;

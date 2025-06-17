@@ -24,7 +24,7 @@ box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.40);
 }
 
 .reviews h2{
-    padding-inline: 250px;
+    padding-inline: 450px;
     font-family: 'Roboto Flex';
 font-weight: 700;
 font-size: 48px;
@@ -40,7 +40,7 @@ color: #000;
   overflow-y: hidden;
 cursor: grab;
     gap: 24px;
-padding-inline: 250px;
+padding-inline: 350px;
 
 }
 
