@@ -63,7 +63,11 @@ const ReviewCard = () => {
   const scrollRef = useRef(null);
 
   useEffect(() => {
-    
+    const container = scrollRef.current;
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
     const onMouseDown = (e) => {
       isDown = true;
@@ -89,7 +93,6 @@ const ReviewCard = () => {
       const walk = (x - startX) * 1.5;
       container.scrollLeft = scrollLeft - walk;
     };
-
     container.addEventListener('mousedown', onMouseDown);
     container.addEventListener('mouseleave', onMouseLeave);
     container.addEventListener('mouseup', onMouseUp);
