@@ -32,19 +32,29 @@ padding: 20px 65px;
     gap: 19px;
     justify-content: center;
 }
-.contact a{
+.contact .copy_phone{
     font-family: 'Roboto Flex';
 font-weight: 400;
 font-size: 20px;
-text-align: center;
 color: #000;
+width: 250px; 
+text-align: right;
+}
+.contact .copy_mail{
+    font-family: 'Roboto Flex';
+font-weight: 400;
+font-size: 20px;
+color: #000;
+text-align: left;
+width: 250px ; 
+
 }
 
 .contact{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 23px;
+    gap: 20px;
 }
 
 .contact button{
