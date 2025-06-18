@@ -52,11 +52,11 @@ transition: box-shadow .5s ease, scale .5s ease;
 
 
 .for__who-box img{
-    width: 250px;
+    width: 200px;
 }
 
 .for__who-box h3{
-    font-family: 'Roboto';
+    font-family: 'Roboto Flex';
 font-weight: 700;
 font-size: 32px;
 line-height: 234%;
@@ -65,7 +65,7 @@ color: #000;
 }
 
 .for__who-box p{
-    font-family: 'Roboto';
+    font-family: 'Roboto Flex';
 font-weight: 700;
 width: 315px;
 font-size: 16px;

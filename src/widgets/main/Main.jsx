@@ -8,13 +8,13 @@ import Reviews from './Reviews/Reviews';
 
 const Main=()=>{
     return(
-        <>
+        <main className='main'>
         <Banner />
         <ForWho />
         <Courses />
         <Reviews />
         <FAQs />
-        </>
+        </main>
     )
 }
 

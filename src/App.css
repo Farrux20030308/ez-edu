@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -9,6 +11,9 @@ body{
   background-attachment: fixed;
   background-size: contain;
   font-family: 'Roboto Flex' !important;
+}
+a{
+  text-decoration: none;
 }
 ul{
   list-style: none;  

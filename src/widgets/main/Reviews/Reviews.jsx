@@ -3,6 +3,7 @@ import './Reviews.css';
 import teacher from '../../../assets/icons/teacher_icon.svg';
 import time from '../../../assets/icons/time_icon.svg';
 import cap from '../../../assets/icons/cap_icon.svg';
+import { Element } from 'react-scroll';
 
 const reviews = [
   {
@@ -107,7 +108,8 @@ const ReviewCard = () => {
   }, []);
 
   return (
-    <div className="reviews">
+    <Element name='reviews'>
+      <section className="reviews">
       <h2>Отзывы</h2>
       <div className="reviews-card-wrapper" ref={scrollRef}>
         {reviews.map((review, index) => {
@@ -142,7 +144,8 @@ const ReviewCard = () => {
           );
         })}
       </div>
-    </div>
+    </section>
+    </Element>
   );
 };
 

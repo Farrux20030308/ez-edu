@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import './FAQs.css';
-
+import { Element } from 'react-scroll';
 const faqs = [
   { question: 'Как проходит обучение?', answer: 'ХЗ' },
   { question: 'Нужны ли учебники?', answer: 'ХЗ' },
@@ -10,14 +10,17 @@ const faqs = [
 ];
 
 const FAQ = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleFAQ = (index) => {
     setActiveIndex((prev) => (prev === index ? null : index));
   };
 
   return (
-    <div className="faq container">
+    
+   <Element name='faq'>
+     <section  className="faq__wrapper">
+<div className="faq container">
       <h2>Часто задаваемые вопросы</h2>
       {faqs.map((item, index) => (
         <FAQItem
@@ -29,6 +32,11 @@ const FAQ = () => {
         />
       ))}
     </div>
+    </section>
+   </Element>
+    
+    
+    
   );
 };
 

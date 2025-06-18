@@ -18,21 +18,22 @@
     align-items: center;
     gap: 35px;
 }
-.header .link_list li a{
-font-family: 'Roboto';
+.header .link_list li .link{
+font-family: 'Roboto Flex';
 font-weight: 500;
 font-size: 18px;
 line-height: 375%;
 text-align: center;
+cursor: pointer;
 color: #000;
 text-decoration: none;
-transition: 0.7s ease-in-out;
+transition: 0.25s ease-in-out;
 }
 .header .link_list li{
-    transition: 0.5s ease-in-out
+    transition: 0.25s ease-in-out
 }
 
-.header .link_list li a:hover{
+.header .link_list li .link:hover{
     color: #0072ff;
 }
 .header .link_list li:hover{
@@ -75,7 +76,7 @@ transition: 0.7s ease-in-out;
     box-shadow: 0 -4px -12px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
   background: linear-gradient(180deg, #00b0e8 0%, #3b9aff 100%);
-  text-shadow: 0 0 10px #00faff, 0 0 20px white;
+
 }
 .shadow__btn {
   box-shadow: 0 0 10px #00faff, 0 0 20px white;

@@ -1,3 +1,6 @@
+ .faq__wrapper{
+    min-height: 800px;
+ }
  .faq{
  
  margin-top: 58px;
@@ -13,9 +16,8 @@
   background: rgba(255, 255, 255, 0.01);
   gap: 20px;
   overflow: hidden;
-  min-height: 800px;
+  min-height: 600px;
 transition: box-shadow .5s ease,scale .5s ease;
-margin-bottom: 200px;
 }
 
 .faq:hover{

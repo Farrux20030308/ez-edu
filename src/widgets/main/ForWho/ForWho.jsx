@@ -3,6 +3,7 @@ import { useEffect,useState } from 'react'
 import plane from '../../../assets/img/plane.png'
 import books from '../../../assets/img/books.png'
 import hands from '../../../assets/img/hands.png'
+import { Element } from 'react-scroll'
 
 
 
@@ -31,7 +32,8 @@ const forWhoData = [
 
 
     return(
-         <div className="for__who container">
+         <Element name='ForWho'>
+          <section className="for__who container">
       <h2>Для кого наши курсы</h2>
       <div className="for__who-wrapper">
         {forWhoData.map((item, index) => (
@@ -42,7 +44,8 @@ const forWhoData = [
           </div>
         ))}
       </div>
-    </div>
+    </section>
+         </Element>
     )
 }
 

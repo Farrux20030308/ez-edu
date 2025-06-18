@@ -5,6 +5,7 @@ import Header from './widgets/header/Header'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Main from './widgets/main/Main';
 import './assets/styles/media.css'
+import Footer from './widgets/Footer/Footer';
 
 
   const App=()=> {
@@ -14,6 +15,7 @@ import './assets/styles/media.css'
     <>
       <Header />
       <Main />
+      <Footer />
     </>
   )
 }

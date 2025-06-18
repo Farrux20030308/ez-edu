@@ -8,6 +8,7 @@
   import cap from '../../../assets/icons/cap.svg';
   import format from '../../../assets/icons/format.svg';
   import time from '../../../assets/icons/time.svg';
+  import { Element } from 'react-scroll';
 
 
 
@@ -126,7 +127,8 @@
 
 
     return (
-      <div className="courses container">
+     <Element name='courses'>
+       <section className="courses container">
         <h2>Наши курсы</h2>
         <div className="courses-wrapper">
           {CoursesData.map((item, index) => {
@@ -177,7 +179,8 @@
             );
           })}
         </div>
-      </div>
+      </section>
+     </Element>
     );
   };
 
