@@ -11,6 +11,7 @@ body{
   background-attachment: fixed;
   background-size: contain;
   font-family: 'Roboto Flex' !important;
+  overflow-x: hidden;
 }
 a{
   text-decoration: none;
@@ -27,6 +28,49 @@ ul{
   padding:0 16px;
 }
 
-body{
-  overflow-x: hidden;
+.loader__wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  background-size: contain;
+  overflow: hidden;
 }
+
+.loader {
+  position: relative;
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #006DFC;
+}
+
+.loader::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:#cecece; /* Required for blur to show */
+  backdrop-filter: blur(40px);
+  animation: pulse 2s infinite;
+  border: 1px solid rgb(123, 123, 123);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+    backdrop-filter: blur(40px);
+    border-color: rgba(123, 123, 123);
+
+  }
+  100% {
+    transform: scale(10);
+    opacity: 0;
+    backdrop-filter: blur(40px);
+    border-color: rgba(123, 123, 123, 0.1);
+  }
+}
+
