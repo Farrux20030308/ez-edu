@@ -9,7 +9,7 @@ box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.25);
 background: rgba(255, 255, 255, 0.01);
 gap: 35px;
 margin-top: 55px;
-min-height: 420px;
+min-height: 450px;
 width: 100%;
 transition: box-shadow .5s ease,scale .5s ease;
 
@@ -22,7 +22,7 @@ box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.40);
 }
 
 .reviews h2{
-    padding-inline: 350px;
+    padding-inline: 18vw;
     font-family: 'Roboto Flex';
 font-weight: 700;
 font-size: 48px;
@@ -35,10 +35,10 @@ color: #000;
 
   display: flex;
   overflow-x: auto;
-  overflow-y: hidden;
 cursor: grab;
     gap: 24px;
-padding-inline: 350px;
+    padding-inline: 18%;
+padding-bottom: 5px;
 
 }
 
@@ -75,7 +75,8 @@ color: #000;
   border-radius: 14px;
   box-shadow: inset 0 0 16px 0 rgba(0, 0, 0, 0.25);
   padding: 20px;
-  min-width: 460px !important;
+  max-width: 460px !important;
+  min-width: 350px;
   display: flex;
   gap: 15px;
   flex-direction: column;

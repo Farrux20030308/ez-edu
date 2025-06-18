@@ -1,8 +1,8 @@
 .courses {
-  margin-top: 155px;
+  margin-top: 58px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
   border: 1px solid #9f9f9f;
   border-radius: 27px;
   padding: 22px;
@@ -12,7 +12,7 @@
   background: rgba(255, 255, 255, 0.01);
   gap: 20px;
   overflow: hidden;
-  min-height: 500px;
+  min-height: 540px;
 transition: box-shadow .5s ease,scale .5s ease;
 
 }
@@ -31,8 +31,9 @@ scale: 1.02;
 }
 
 .courses-wrapper {
+  flex-wrap: wrap;
 display: flex;
-justify-content: space-between;
+
   gap: 24px; /* расстояние между элементами */
   position: relative;
   transition: height 0.4s ease;
@@ -53,8 +54,8 @@ justify-content: space-between;
   background: #fff;
   cursor: pointer;
   width: 100%;
-  max-width: 250px;
-  min-height: 350px;
+  max-width: 283px;
+  min-height: 400px;
   transition: none;
   position: relative;
   z-index: 1;
@@ -93,9 +94,10 @@ justify-content: space-between;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%px;
   flex-shrink: 0;
-  height: 350px;
+  height: 400px;
   gap: 15px;
   transition: gap 0.8s ease;
   
@@ -152,7 +154,7 @@ width: 100%;
   height: 120px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 150%;
   color: #000;
 }
