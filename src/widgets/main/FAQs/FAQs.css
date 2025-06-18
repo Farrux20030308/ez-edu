@@ -94,7 +94,7 @@ color: #000;
 
 .toggle-line {
   stroke: black;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
   transform-origin: center;
 }
 
@@ -103,7 +103,7 @@ color: #000;
 }
 
 .toggle-icon.active .vertical {
-  transform: rotate(-45deg);
+  transform: rotate(-225deg);
 }
 
 .toggle-line.horizontal {
@@ -111,5 +111,5 @@ color: #000;
 }
 
 .toggle-icon.active .horizontal {
-  transform: rotate(-45deg);
+  transform: rotate(-225deg);
 }
