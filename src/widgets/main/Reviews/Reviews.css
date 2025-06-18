@@ -1,7 +1,5 @@
 .reviews{
-     display: flex;
-    flex-direction: column;
-    justify-content: center;
+ 
     border: 1px solid #9f9f9f;
     border-right: none;
 padding: 22px;
@@ -11,7 +9,7 @@ box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.25);
 background: rgba(255, 255, 255, 0.01);
 gap: 35px;
 margin-top: 55px;
-min-height: 550px;
+min-height: 420px;
 width: 100%;
 transition: box-shadow .5s ease,scale .5s ease;
 
@@ -24,7 +22,7 @@ box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.40);
 }
 
 .reviews h2{
-    padding-inline: 450px;
+    padding-inline: 350px;
     font-family: 'Roboto Flex';
 font-weight: 700;
 font-size: 48px;
@@ -33,7 +31,7 @@ color: #000;
 
 }
 .reviews-card-wrapper{
-    
+    margin-top: 20px;
 
   display: flex;
   overflow-x: auto;

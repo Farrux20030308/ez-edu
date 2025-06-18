@@ -2,12 +2,11 @@
   margin-top: 155px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   border: 1px solid #9f9f9f;
   border-radius: 27px;
   padding: 22px;
-  padding-top: 0;
-  padding-bottom: 0;
+
   backdrop-filter: blur(3px);
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.25);
   background: rgba(255, 255, 255, 0.01);
@@ -32,12 +31,13 @@ scale: 1.02;
 }
 
 .courses-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
+display: flex;
+justify-content: space-between;
+  gap: 24px; /* расстояние между элементами */
   position: relative;
   transition: height 0.4s ease;
-  padding: 5px;
+
+  max-width: 1250px;
 }
 
 .courses-box {
@@ -53,7 +53,7 @@ scale: 1.02;
   background: #fff;
   cursor: pointer;
   width: 100%;
-  max-width: 230px;
+  max-width: 250px;
   min-height: 350px;
   transition: none;
   position: relative;
