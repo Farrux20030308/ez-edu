@@ -27,6 +27,6 @@ ul{
   padding:0 16px;
 }
 
-body::-webkit-scrollbar{
-display: none;
+body{
+  overflow-x: hidden;
 }
