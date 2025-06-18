@@ -6,8 +6,8 @@ import { Element } from 'react-scroll';
     const Banner=()=>{
         return(
         
-            <Element name='banner'>
-                <section className='banner__wrapper'>
+            <Element id='banner' name='banner'>
+                <section  className='banner__wrapper'>
             <div className="banner container">
                 <div className="banner__left">
                 <h2 className='banner__text'>Английский - онлайн, просто и удобно</h2> 

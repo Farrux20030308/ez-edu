@@ -17,10 +17,11 @@ padding: 20px 65px;
   border: none;
   width: 100%;
   width: 435px;
-  
+  text-align: center;
+  font-family: 'Roboto';
   padding: 22px;
   border-radius: 14px;
-  font-size: 16px;
+  font-size: 22px;
   cursor: pointer;
   margin-top: 30px;
 }

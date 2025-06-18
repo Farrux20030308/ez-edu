@@ -5,6 +5,7 @@ import whatsapp from '../../assets/icons/whatsapp_icon.svg'
 import phone from '../../assets/icons/phone_icon.svg'
 import mail from '../../assets/icons/mail_icon.svg'
 import logo from '../../assets/icons/logo2.png'
+import { Link } from 'react-scroll'
 const Footer=()=>{
     return(
         <footer className='footer'>
@@ -12,7 +13,7 @@ const Footer=()=>{
             <h2>Чего же вы ждете?</h2>
         </div>
         <div className="footer__content">
-            <button className='footer__shadow-btn'>Записаться</button>
+            <Link to='banner' smooth={true} duration={500} offset={-150} className='footer__shadow-btn'>Записаться</Link>
             <div className="contact">
             <a href="tel:+998979966111">+998 (97) 996 61 11</a>
             <button onClick={() => window.location.href = 'tel:+998979666111'}><img src={phone} alt="" /></button>

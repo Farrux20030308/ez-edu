@@ -8,29 +8,29 @@ const Header = () => {
   return (
     <header className='header'>
       <div className="logo">
-        <Link to="home" smooth={true} duration={500}>
+        <a href='/'>
           <img src={logo} alt="EZ Education Logo" />
-        </Link>
+        </a>
       </div>
       <nav className="nav">
         <ul className="link_list">
           <li>
-            <Link className='link' to="ForWho" smooth={true} duration={500} offset={-50}>
+            <Link className='link' to="ForWho" smooth={true} duration={500} offset={-150}>
               Для кого
             </Link>
           </li>
           <li>
-            <Link className='link' to="courses" smooth={true} duration={500} offset={-50}>
+            <Link className='link' to="courses" smooth={true} duration={500} offset={-150}>
               Курсы
             </Link>
           </li>
           <li>
-            <Link className='link' to="reviews" smooth={true} duration={500} offset={-50}>
+            <Link className='link' to="reviews" smooth={true} duration={500} offset={-150}>
               Отзывы
             </Link>
           </li>
           <li>
-            <Link className='link' to="faq" smooth={true} duration={500} offset={-50}>
+            <Link className='link' to="faq" smooth={true} duration={500} offset={-150}>
               Вопросы
             </Link>
           </li>
