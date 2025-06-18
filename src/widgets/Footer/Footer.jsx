@@ -20,8 +20,15 @@ const Footer=()=>{
             <button onClick={()=> window.open('https://www.whatsapp.com', '_blank')}><img src={whatsapp} alt="" /></button>
             <button onClick={()=> window.open('https://www.telegram.com', '_blank')}><img src={tg} alt="" /></button>
             <button onClick={()=> window.open('https://www.instagram.com', '_blank')}><img src={insta} alt="" /></button>
-            <button onClick={() => window.location.href = 'mailto:admin@ez-education.com'}><img src={mail} alt="" /></button>
-            <a href="mailto:admin@ez-education.com">admin@ez-education.com</a>
+            <button onClick={() => window.open('https://mail.google.com/mail/?view=cm&fs=1&to=admin@ez-education.com')}><img src={mail} alt="" /></button>
+            <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=admin@ez-education.com"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  admin@ez-education.com
+</a>
+
             </div>
         </div>
         <div className="footer__sign">
