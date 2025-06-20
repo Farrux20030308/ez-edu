@@ -112,12 +112,12 @@
 
       currentRef.style.transition = 'none';
       currentRef.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
-      currentRef.offsetHeight; // рефлоу
+      currentRef.offsetHeight; // 
 
       currentRef.style.transition = 'transform 0.5s ease';
       currentRef.style.transform = 'translate(0, 0)';
 
-      // ⏱ Задержка перед expand — как и раньше:
+
       const expandDelay = index === 0 ? 300 : 300;
 
       setTimeout(() => {
@@ -127,7 +127,7 @@
 
         setTimeout(() => {
           setShowDetailsIndex(index);
-        }, 900);
+        }, 700);
       }, expandDelay);
     });
   }, waitBeforeMove);

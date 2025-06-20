@@ -46,17 +46,16 @@ const Header = ({onContactClick}) => {
           <div className="language-list-item">
             <Language />
           </div>
-
+            <li className='link'>
           <button className="shadow__btn" onClick={onContactClick}>
   <i className="fas fa-phone" style={{ color: 'white', fontSize: '24px' }}></i>
   Связаться
 </button>
+            </li>
 
 
         </ul>
       </nav>
-
-      {/* Бургер SVG-кнопка */}
       <button
         className={`hamburger-btn ${menuOpen ? 'active' : ''}`}
         onClick={toggleMenu}
@@ -109,10 +108,12 @@ const Header = ({onContactClick}) => {
             </Link>
           ))}
           <Language />
-          <button className="shadow__btn" onClick={() => setMenuOpen(false)}>
-            <i className="fas fa-phone" style={{ color: 'white', fontSize: '24px' }}></i>
-            Связаться
-          </button>
+          
+          <button className="shadow__btn" onClick={onContactClick}>
+  <i className="fas fa-phone" style={{ color: 'white', fontSize: '24px' }}></i>
+  Связаться
+</button>
+          
         </nav>
       )}
     </header>
