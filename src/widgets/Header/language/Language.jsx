@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import flagEn from "../../assets/icons/eng.png";
-import flagRu from "../../assets/icons/rus.png";
-import flagUz from "../../assets/icons/uzb.png";
+import flagEn from "../../../assets/icons/eng.png";
+import flagRu from "../../../assets/icons/rus.png";
+import flagUz from "../../../assets/icons/uzb.png";
 
 import "./Language.css";
 

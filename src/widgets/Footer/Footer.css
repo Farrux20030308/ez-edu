@@ -10,20 +10,29 @@ justify-content: center;
 padding: 20px 65px;
 
 }
-
+.footer__title h2{
+    font-family: 'Roboto';
+font-style: italic;
+font-weight: 400;
+font-size: 24px;
+text-align: center;
+color: #000;
+}
 .footer__shadow-btn{
     background: linear-gradient(39deg, #006dfc 0%, #00c6da 100%);
-  color: white;
-  border: none;
-  width: 100%;
-  width: 435px;
-  text-align: center;
-  font-family: 'Roboto';
-  padding: 22px;
+    color: white;
+    border: none;
+    font-family: 'Roboto';
+    width: 100%;
+    max-width: 520px;
+  padding: 20px;
   border-radius: 14px;
-  font-size: 22px;
   cursor: pointer;
-  margin-top: 30px;
+  margin-top: 20px;
+font-weight: 900;
+font-size: 20px;
+text-align: center;
+color: #fff;
 }
 .footer__content{
     display: flex;

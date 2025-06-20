@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef,useState } from 'react';
 import './Reviews.css';
 import teacher from '../../../assets/icons/teacher_icon.svg';
 import time from '../../../assets/icons/time_icon.svg';
@@ -27,42 +27,41 @@ const reviews = [
     teacher: 'Mr. Owen',
     duration: '1 месяц',
   },
-  {
-    name: 'Irina',
-    text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
-    age: '12 лет',
-    teacher: 'Mr. Owen',
-    duration: '1 месяц',
-  },
-  {
-    name: 'Irina',
-    text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
-    age: '12 лет',
-    teacher: 'Mr. Owen',
-    duration: '1 месяц',
-  },
-  {
-    name: 'Irina',
-    text: 'Мой сын с удовольствием заходит на занятия, стал увереннее говорить по-английски. Спасибо за внимательный подход и интересные уроки!',
-    age: '12 лет',
-    teacher: 'Mr. Owen',
-    duration: '1 месяц',
-  },
+{
+  name: 'Farrux',
+  text: 'Всё топово, рекомендую!',
+  age: '22 года',
+  teacher: 'Mr. Owen',
+  duration: '3 месяца'
+}
+  
 ];
 
-const nameColorMap = {}; // Запоминаем цвета для имён
 
-const getColorForName = (name) => {
-  if (nameColorMap[name]) return nameColorMap[name];
-  const colors = ['0069fd', '00cad8', 'ffa500', '8a2be2', '00b894', 'ff6b6b'];
-  const randomColor = colors[Math.floor(Math.random() * colors.length)];
-  nameColorMap[name] = randomColor;
-  return randomColor;
-};
+
+
 
 const ReviewCard = () => {
   const scrollRef = useRef(null);
+const [nameColorMap, setNameColorMap] = useState(() => {
+  const stored = localStorage.getItem('nameColorMap');
+  return stored ? JSON.parse(stored) : {};
+});
+useEffect(() => {
+  localStorage.setItem('nameColorMap', JSON.stringify(nameColorMap));
+}, [nameColorMap]);
+const getColorForName = (name) => {
+  if (nameColorMap[name]) return nameColorMap[name];
 
+  const colors = ['0069fd', '00cad8', 'ffa500', '8a2be2', '00b894', 'ff6b6b'];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+  const updatedMap = { ...nameColorMap, [name]: randomColor };
+  setNameColorMap(updatedMap);
+  localStorage.setItem('nameColorMap', JSON.stringify(updatedMap));
+
+  return randomColor;
+};
   useEffect(() => {
     const container = scrollRef.current;
 

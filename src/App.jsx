@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react'
-import PhoneInput from 'react-phone-number-input/input'
 import './App.css'
 import Header from './widgets/header/Header'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Main from './widgets/main/Main'
 import './assets/styles/media.css'
 import Footer from './widgets/Footer/Footer'
+import ContactModal from './widgets/header/ContactModal/ContactModal';
 
 const App = () => {
+  
   const [loading, setLoading] = useState(true)
+    const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const handleLoad = () => {
@@ -31,7 +33,9 @@ const App = () => {
 
   return (
     <>
-      <Header />
+      {showModal && <ContactModal onClose={() => setShowModal(false)} />}
+
+     <Header onContactClick={() => setShowModal(true)} />
       <Main />
       <Footer />
     </>

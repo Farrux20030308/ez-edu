@@ -9,6 +9,7 @@
   import format from '../../../assets/icons/format.svg';
   import time from '../../../assets/icons/time.svg';
   import { Element } from 'react-scroll';
+  import soon from '../../../assets/icons/soon.png'
 
 
 
@@ -19,6 +20,7 @@
     const [expandedIndex, setExpandedIndex] = useState(null); 
     const cardRefs = useRef([]);
     const [showDetailsIndex, setShowDetailsIndex] = useState(null);
+    
 
 
     const CoursesData = [
@@ -27,7 +29,7 @@
         title: 'General',
         text: 'Занятия в мини-группах с использованием комплексной программы',
         description:
-          'Куурс направлен на развитие общих навыков и знаний английского. Используется программа, разработанная на основе программ Оксфордского и Кембриджского университетов.',
+          'Курс направлен на развитие общих навыков и знаний английского. Используется программа, разработанная на основе программ Оксфордского и Кембриджского университетов.',
         duration: '12 - 16 месяцев',
         time: '80 минут',
         format: 'В мини-группе до 6 человек',
@@ -75,17 +77,18 @@
         text: 'Основы английского для детей',
         description:
           'Курс нацелен привить ребенку интерес к учёбе и в частности к английскому языку. Занятия проводяться в игравом формате, с использованием сервисов Kahoot и Duolingo, что помогает концентрировать внимание и мотивировать ребенка.',
-        duration: '3 - 6 месяцев',
-        time: '60 минут',
-        format: 'В мини-группе до 6 человек',
-        age: 'От 6 до 12 лет',
-        features: [
-          'Занятия в игровом формате',
-          'Удобный родительский контроль',
-        ],
+          duration: '3 - 6 месяцев',
+          time: '60 минут',
+          format: 'В мини-группе до 6 человек',
+          age: 'От 6 до 12 лет',
+          features: [
+            'Занятия в игровом формате',
+            'Удобный родительский контроль',
+          ],
       },
     ];
-
+    
+    const [isFading, setIsFading] = useState(false);
     const handleCardClick = (index) => {
   if (activeIndex === index) {
     setActiveIndex(null);
@@ -97,85 +100,107 @@
   const currentRef = cardRefs.current[index];
   const firstRect = currentRef.getBoundingClientRect();
 
-  setActiveIndex(index);
+  setActiveIndex(index); // запускает fade-out
 
-  requestAnimationFrame(() => {
-    const lastRect = currentRef.getBoundingClientRect();
-    const deltaX = firstRect.left - lastRect.left;
-    const deltaY = firstRect.top - lastRect.top;
+  const waitBeforeMove = index === 0 ? 300 : 0; // только для первой карточки ждём
 
-    currentRef.style.transition = 'none';
-    currentRef.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
-    currentRef.offsetHeight; // force reflow
+  setTimeout(() => {
+    requestAnimationFrame(() => {
+      const lastRect = currentRef.getBoundingClientRect();
+      const deltaX = firstRect.left - lastRect.left;
+      const deltaY = firstRect.top - lastRect.top;
 
-    currentRef.style.transition = 'transform 0.5s ease';
-    currentRef.style.transform = 'translate(0, 0)';
+      currentRef.style.transition = 'none';
+      currentRef.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+      currentRef.offsetHeight; // рефлоу
 
-    const delay = index === 0 ? 0 : 300;
+      currentRef.style.transition = 'transform 0.5s ease';
+      currentRef.style.transform = 'translate(0, 0)';
 
-    setTimeout(() => {
-      currentRef.style.transition = '';
-      currentRef.style.transform = '';
-      setExpandedIndex(index);
+      // ⏱ Задержка перед expand — как и раньше:
+      const expandDelay = index === 0 ? 300 : 300;
+
       setTimeout(() => {
-        setShowDetailsIndex(index);
-      }, 900); // задержка перед появлением details (можно настроить)
-    }, delay);
-  });
+        currentRef.style.transition = '';
+        currentRef.style.transform = '';
+        setExpandedIndex(index);
+
+        setTimeout(() => {
+          setShowDetailsIndex(index);
+        }, 900);
+      }, expandDelay);
+    });
+  }, waitBeforeMove);
 };
 
 
 
-    return (
-     <Element name='courses'>
+
+
+return (
+  <Element name='courses'>
        <section className="courses container">
         <h2>Наши курсы</h2>
         <div className="courses-wrapper">
           {CoursesData.map((item, index) => {
             const isHidden = activeIndex !== null && activeIndex !== index;
             const isExpanded = expandedIndex === index;
+            const blured = (index === 2 || index === 3) ? 'blurred' : '';
+            const showExtraImage = index === 2 || index === 3;
+            const hideContent = activeIndex === index && showDetailsIndex !== index;
 
             return (
               <div
-                key={index}
-                className={`courses-box ${isExpanded ? 'expanded' : ''} ${isHidden ? 'hidden' : ''}`}
-                ref={(el) => (cardRefs.current[index] = el)}
-                onClick={() => handleCardClick(index)}
-              >
-                <div className="courses-box-left">
-                  <img
-                    className={`image ${isExpanded ? 'expanded' : ''} ${
-                      isHidden ? 'blurred' : ''
-                    }`}
-                    src={item.img}
-                    alt={item.title}
-                  />
-                  <h3>{item.title}</h3>
-                  {!isExpanded && <p>{item.text}</p>}
+              key={index}
+              className={`courses-box ${isExpanded ? 'expanded' : ''} ${isHidden ? 'hidden' : ''}`}
+              ref={(el) => (cardRefs.current[index] = el)}
+              onClick={() => handleCardClick(index)}
+>
+ <div
+  className={`courses-box-left ${
+    activeIndex === index && showDetailsIndex !== index
+      ? 'fade-out'
+      : 'fade-in'
+  }`}
+>
 
-                  <ul className={`courses-box-meta ${isExpanded ? 'expanded' : ''}`}>
-                    <li><img src={calendar} alt="" /> {item.duration}</li>
-                    <li><img src={time} alt="" /> {item.time}</li>
-                    <li><img src={format} alt="" /> {item.format}</li>
-                    <li><img src={cap} alt="" /> {item.age}</li>
-                  </ul>
-                </div>
+  <img
+    className={`image ${isExpanded ? 'expanded ' : ''}${blured}`}
+    src={item.img}
+    alt={item.title}
+  />
+  {showExtraImage && (
+    <img
+      src={soon}
+      alt="Дополнительная иллюстрация"
+      className="left__image"
+    />
+  )}
+  <h3>{item.title}</h3>
+  {!isExpanded && <p>{item.text}</p>}
 
-                {showDetailsIndex === index && (
-  <div className="courses-box-details">
-    <p>
-      <strong>Краткое описание:</strong> {item.description}
-    </p>
-    <p><strong>Ключевые отличия:</strong></p>
-    <ol>
-      {item.features.map((feature, i) => (
-        <li key={i}>{feature}</li>
-      ))}
-    </ol>
-  </div>
-)}
+  <ul className={`courses-box-meta ${isExpanded ? 'expanded' : ''}`}>
+    <li><img src={calendar} alt="" /> {item.duration}</li>
+    <li><img src={time} alt="" /> {item.time}</li>
+    <li><img src={format} alt="" /> {item.format}</li>
+    <li><img src={cap} alt="" /> {item.age}</li>
+  </ul>
+</div>
 
-              </div>
+
+  {showDetailsIndex === index && (
+    <div className="courses-box-details">
+      <p><strong>Краткое описание:</strong> {item.description}</p>
+      <p><strong>Ключевые отличия:</strong></p>
+      <ol>
+        {item.features.map((feature, i) => (
+          <li key={i}>{feature}</li>
+        ))}
+      </ol>
+    </div>
+  )}
+</div>
+
             );
           })}
         </div>

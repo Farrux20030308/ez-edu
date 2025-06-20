@@ -1,5 +1,5 @@
  .faq__wrapper{
-    min-height: 800px;
+    min-height: 900px;
  }
  .faq{
  
@@ -42,15 +42,14 @@ background: #fff;
 }
 
 .faq-question {
-  padding: 16px;
+  padding: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
   font-family: 'Roboto Flex';
 font-weight: 500;
-font-size: 20px;
-line-height: 312%;
+font-size: 30px;
 color: #000;
 }
 
@@ -65,16 +64,15 @@ color: #000;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
-  font-family: 'Roboto Flex';
-font-weight: 300;
-font-size: 24px;
-line-height: 312%;
-color: #000;
+  
 }
 
 .faq-answer-inner {
-  padding: 16px;
-  font-size: 16px;
+  font-family: 'Roboto Flex';
+  color: #000;
+  padding: 25px;
+  padding-top: 0;
+  font-size: 28px;
   line-height: 1.5;
 }
 .toggle-icon {

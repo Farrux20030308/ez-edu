@@ -11,7 +11,8 @@ import { Element } from 'react-scroll';
             <div className="banner container">
                 <div className="banner__left">
                 <h2 className='banner__text'>Английский - онлайн, просто и удобно</h2> 
-                <video className='banner__video' src="1"></video>              
+                <div className='banner__video' src="1"><h3 className='video__slogan'>"EZ education - проще, чем кажется"</h3></div>          
+                    
                 </div>
                 <Form />
             </div>
