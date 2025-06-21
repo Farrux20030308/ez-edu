@@ -6,6 +6,7 @@ import Main from './widgets/main/Main'
 import './assets/styles/media.css'
 import Footer from './widgets/Footer/Footer'
 import ContactModal from './widgets/header/ContactModal/ContactModal';
+import './assets/styles/common.css'
 
 const App = () => {
   
@@ -37,7 +38,7 @@ const App = () => {
 
      <Header onContactClick={() => setShowModal(true)} />
       <Main />
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

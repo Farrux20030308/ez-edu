@@ -10,10 +10,10 @@ const Main=()=>{
     return(
         <main className='main'>
         <Banner />
-        <ForWho />
+        {/* <ForWho />
         <Courses />
         <Reviews />
-        <FAQs />
+        <FAQs /> */}
         </main>
     )
 }

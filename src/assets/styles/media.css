@@ -1,55 +1,257 @@
-
-@media (max-width: 480px) { 
-  
-  
- }
-
-@media (max-width: 768px) { 
-	.header{
-		justify-content:space-around !important;
+/* ========== 1300px и меньше (ноутбуки) ========== */
+@media (min-width: 1051px) and (max-width: 1300px) {
+	.banner {
+		align-items: normal;
 	}
-	.header .link_list{
-		display: none ;
+
+	.banner__text {
+		font-weight: 800;
+		font-size: 54px;
+		width: 450px;
+	}
+
+	.banner__video .video__slogan {
+		font-size: 18px;
+	}
+
+	.form-container {
+		max-width: 500px;
+		height: 500px;
+	}
+
+	.submit-button {
+		padding: 15px;
+	}
+
+	.header .link_list li a {
+		font-weight: 500;
+		font-size: 16px;
+	}
+
+	.shadow__btn {
+		padding: 16px 34px;
+		font-size: 16px;
+	}
+
+	.logo img {
+		width: 20vw;
+	}
+}
+
+/* ========== 1210px и меньше ========== */
+@media (max-width: 1210px) {
+	.form-container {
+		max-width: 450px;
+		height: 492px;
+	}
+	.banner__video {
+		max-width: 490px;
+	}
+}
+
+/* ========== 1120px и меньше ========== */
+@media (max-width: 1120px) {
+	.banner__video {
+		max-width: 450px;
+	}
+}
+
+/* ========== 1050px и меньше ========== */
+@media (max-width: 1050px) {
+	.banner__text {
+		font-size: 46px;
+		max-width: 450px;
+	}
+
+	.banner__wrapper {
+		width: min-content;
+		margin: 0 auto;
+	}
+
+	.header .logo img {
+		width: 25vw;
+	}
+
+	.banner__left {
+		gap: 24px;
+	}
+
+	.header .link_list li a {
+		font-weight: 500;
+		font-size: 16px;
+	}
+
+	.header .link_list {
+		gap: 15px;
+	}
+
+	.header {
+		padding: 10px;
+		justify-content: space-between;
+	}
+
+	.shadow__btn {
+		padding: 14px 25px;
+		font-size: 14px;
+	}
+}
+
+/* ========== 768px и меньше ========== */
+@media (max-width: 768px) {
+	.header {
+		justify-content: space-around;
+	}
+
+	.header .link_list {
+		display: none;
 		position: relative;
 	}
 
-}
-
-@media (max-width: 1024px) { 
-	.header .logo img{
-		width: 25vw;
+	.language-container {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 9999;
 	}
-.header .link_list li a{
-font-weight: 500;
-font-size: 16px;
-}
-.header .link_list{
-	gap: 15px;
-}
-.header{
-	padding: 10px;
-	justify-content: space-between;
-}
-.shadow__btn{
-	padding: 14px 25px;
-	font-size: 14px;
-}
- 
- 
- }
 
-@media (min-width: 1025px) and (max-width: 1300px) { 
-.header .link_list li a{
-font-weight: 500;
-font-size: 16px;
-}
-.shadow__btn{
-	padding: 16px 34px;
-	font-size: 16px;
+	.container {
+		max-width: 900px;
+		width: 100%;
+	}
+
+	.banner__text {
+		font-size: 40px;
+	}
+
+	.banner__video {
+		max-width: 450px;
+	}
 }
 
-.logo img{
-	width: 20vw;
+/* ========== 552px и меньше ========== */
+@media (max-width: 552px) {
+	.banner__video {
+		width: 100%;
+	}
+
+	.banner__video .video__slogan {
+		font-size: 17px;
+	}
+
+	.banner__text {
+		font-size: 34px;
+		max-width: 400px;
+	}
+
+	.container {
+		max-width: 500px;
+	}
+
+	.form-container {
+		max-width: 400px;
+	}
+
+	.form-container h2 {
+		font-size: 24px;
+	}
+
+	.dropdown-display span {
+		font-size: 16px;
+	}
+}
+@media (max-width:495px) {
+	.dropdown-menu li{
+		font-size: 16px;
+	}
+	.banner__text{
+		max-width: 330px;
+	}
+	
+	.form-container{
+		max-width: 330px;
+	}
+	.form-container h2{
+		max-width: 270px;
+		font-size: 18px;
+	}
+	.input-group input{
+		padding: 12px 8px;
+		font-size: 16px;
+	}
+
+	.PhoneInput .PhoneInputCountry{
+		padding: 24px 20px;
+	}
+
+	.banner__video{
+		max-width: 330px;
+		height: 200px;
+	}
+	.dropdown-display span{
+		font-size: 12px;
+	}
 }
 
- }
+@media (max-width:390px) {
+	.banner__text{
+		font-size: 24px;
+		max-width: 250px;
+	}
+	
+	.form-container{
+		max-width: 250px;
+		height: 460px;
+	}
+	.form-container h2{
+		max-width: 220px;
+		font-size: 13px;
+	}
+	.input-group input{
+		padding: 12px 8px;
+		font-size: 12px;
+	}
+
+	.PhoneInput .PhoneInputCountry{
+		padding: 5px 10px;
+	}
+
+	.banner__video{
+		max-width: 250px;
+		height: 200px;
+	}
+	.dropdown__wrapper{
+		flex-direction: column;
+	}
+	.dropdown-display span{
+		font-size: 12px;
+		padding: 0px 10px;
+	}
+	.submit-button{
+		padding: 10px;
+	}
+	.dropdown-arrow{
+		width: 40px;
+		height: 40px;
+	}
+}
+@media (max-width:320px) {
+	.banner__text{
+		font-size: 20px;
+		width: 200px;
+	}
+
+	.form-container{
+		width: 200px;
+		padding: 20px 15px;
+	}
+	.form-container h2{
+		font-size: 12px;
+		width: 170px;
+	}
+}
+@media (max-width:290px) {
+	body{
+		display: none;
+	}
+	
+}
