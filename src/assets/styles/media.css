@@ -37,10 +37,20 @@
 	.logo img {
 		width: 20vw;
 	}
+	.for__who{
+		width: 95%;
+	}
 }
 
 /* ========== 1210px и меньше ========== */
 @media (max-width: 1210px) {
+	.for__who-box h3{
+		font-size: 23px;
+	}
+	.for__who-box p{
+		font-size: 13px;
+		width: 90%;
+	}
 	.banner {
 		backdrop-filter: blur(1px);
 	}
@@ -63,6 +73,19 @@
 
 /* ========== 1050px и меньше ========== */
 @media (max-width: 1050px) {
+	.for__who{
+		margin-top: 10px 	;
+		width: 500px;
+	}
+	.for__who h2{
+		font-size: 38px;
+	}
+	.for__who-box h3{
+		font-size: 32px;
+	}
+	.for__who-box p{
+		font-size: 16px;
+	}
 	.banner__text {
 		font-size: 46px;
 		max-width: 450px;
@@ -103,6 +126,7 @@
 
 /* ========== 768px и меньше ========== */
 @media (max-width: 768px) {
+	
 	.logo img{
 		width: 30vw !important;
 	}
@@ -153,10 +177,22 @@
 	.banner__video {
 		max-width: 450px;
 	}
+	.for__who{
+		width: 500px;
+	}
+	.for__who-box h3{
+		font-size: 32px;
+	}
+	.for__who-box p{
+		font-size: 16px;
+	}
 }
 
 /* ========== 552px и меньше ========== */
 @media (max-width: 552px) {
+	.for__who{
+		width: 440px;
+	}
 	.banner__video {
 		width: 100%;
 	}
@@ -211,6 +247,12 @@
 	}
 }
 @media (max-width:495px) {
+	.for__who{
+		width: 365px;
+	}
+	.for__who h2{
+		font-size: 28px;
+	}
 .contact-modal{
 		width: 300px;
 	}
@@ -266,6 +308,17 @@
 }
 
 @media (max-width:390px) {
+	.for__who{
+		width: 285px;
+		padding: 16px;
+		gap: 16px;
+	}
+	.for__who h2{
+		font-size: 24px;
+	}
+	.for__who-box p{
+		width: 100%;
+	}
 	.contact-modal{
 		width: 250px;
 		gap: 5px;

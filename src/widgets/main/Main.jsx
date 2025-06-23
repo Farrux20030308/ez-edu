@@ -10,8 +10,8 @@ const Main=()=>{
     return(
         <main className='main'>
         <Banner />
-        {/* <ForWho />
-        <Courses />
+        <ForWho />
+        {/*<Courses />
         <Reviews />
         <FAQs /> */}
         </main>

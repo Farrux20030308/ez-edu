@@ -45,7 +45,7 @@ align-items: center;
 padding: 15px 50px 20px 50px;
 box-shadow: inset 0 0 16px 0 rgba(0, 0, 0, 0.25);
 background: #fff;
-
+gap: 20px;
 height: 100%;
 transition: box-shadow .5s ease, scale .5s ease;
 }
@@ -59,7 +59,7 @@ transition: box-shadow .5s ease, scale .5s ease;
     font-family: 'Roboto Flex';
 font-weight: 700;
 font-size: 32px;
-line-height: 234%;
+line-height: 100%;
 text-align: center;
 color: #000;
 }
