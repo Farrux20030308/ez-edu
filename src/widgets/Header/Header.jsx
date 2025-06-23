@@ -63,12 +63,12 @@ const Header = ({ onContactClick }) => {
             <div className="language-list-item">
               <Language />
             </div>
-            <li className="link">
+            
               <button className="shadow__btn" onClick={onContactClick}>
                 <i className="fas fa-phone" style={{ color: 'white', fontSize: '24px' }}></i>
                 Связаться
               </button>
-            </li>
+            
           </ul>
         </nav>
       )}
@@ -112,11 +112,7 @@ const Header = ({ onContactClick }) => {
               {link.label}
             </Link>
           ))}
-          <Language />
-          <button className="shadow__btn" onClick={onContactClick}>
-            <i className="fas fa-phone" style={{ color: 'white', fontSize: '24px' }}></i>
-            Связаться
-          </button>
+          
         </nav>
       )}
     </header>

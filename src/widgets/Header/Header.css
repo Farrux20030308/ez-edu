@@ -70,12 +70,13 @@ transition: 0.25s ease-in-out;
   font-size: 24px;
   text-align: center;
   color: #fff;
-  box-shadow:0 4px 8px rgba(0, 0, 0, 0.2)
+  box-shadow:0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
 }
 
 .shadow__btn:hover {
     box-shadow: 0 -4px -12px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
+  transform: scale(1.08) ; 
   background: linear-gradient(180deg, #00b0e8 0%, #3b9aff 100%);
 
 }
@@ -129,6 +130,11 @@ transition: 0.25s ease-in-out;
     z-index: 999;
   
 }
+
+.menu .link{
+cursor: pointer;
+}
+
 @media (max-width: 912px){
   .header .link_list li .link{
     font-size: 14px;
