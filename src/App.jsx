@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Header from './widgets/header/Header'
+import Header from './widgets/Header/Header'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Main from './widgets/main/Main'
 import Footer from './widgets/Footer/Footer'
-import ContactModal from './widgets/header/ContactModal/ContactModal';
+import ContactModal from './widgets/Header/ContactModal/ContactModal';
 import './assets/styles/common.css'
 import './assets/styles/media.css'
 
