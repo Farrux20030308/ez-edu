@@ -9,7 +9,6 @@ body{
   min-height: 350vh;
   background: url(./assets//img/bg.jpg);
   background-attachment: fixed;
-  background-size: contain;
   font-family: 'Roboto Flex' !important;
   overflow-x: hidden;
 }

@@ -3,21 +3,35 @@ import './Header.css';
 import logo from '../../assets/icons/Logo2.png';
 import Language from './language/Language.jsx';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { useState } from 'react';
-import ContactModal from './ContactModal/ContactModal.jsx';
+import { useState, useEffect } from 'react';
 
-const Header = ({onContactClick}) => {
+const Header = ({ onContactClick }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(prev => !prev);
 
-
-  // один массив — для обоих меню
   const navLinks = [
     { to: 'ForWho', label: 'Для кого' },
     { to: 'courses', label: 'Курсы' },
     { to: 'reviews', label: 'Отзывы' },
     { to: 'faq', label: 'Вопросы' },
   ];
+
+  const useIsMobile = (breakpoint = 768) => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= breakpoint);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= breakpoint);
+      };
+
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, [breakpoint]);
+
+    return isMobile;
+  };
+
+  const isMobile = useIsMobile();
 
   return (
     <header className="header">
@@ -27,35 +41,43 @@ const Header = ({onContactClick}) => {
         </a>
       </div>
 
-      <nav className="nav">
-        <ul className="link_list">
-          {navLinks.map((link, index) => (
-            <li key={index}>
-              <Link
-                className="link"
-                to={link.to}
-                smooth={true}
-                duration={500}
-                offset={-150}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+      
 
-          <div className="language-list-item">
-            <Language />
-          </div>
-            <li className='link'>
+      {!isMobile && (
+        <nav className="nav">
+          <ul className="link_list">
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <Link
+                  className="link"
+                  to={link.to}
+                  smooth={true}
+                  duration={500}
+                  offset={-150}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+
+            <div className="language-list-item">
+              <Language />
+            </div>
+            <li className="link">
+              <button className="shadow__btn" onClick={onContactClick}>
+                <i className="fas fa-phone" style={{ color: 'white', fontSize: '24px' }}></i>
+                Связаться
+              </button>
+            </li>
+          </ul>
+        </nav>
+      )}
+      {isMobile && (
+        <div className="header-mobile-right">
+          <Language />
           <button className="shadow__btn" onClick={onContactClick}>
-  <i className="fas fa-phone" style={{ color: 'white', fontSize: '24px' }}></i>
-  Связаться
-</button>
-            </li>
-
-
-        </ul>
-      </nav>
+            <i className="fas fa-phone" style={{ color: 'white', fontSize: '24px' }}></i>
+          </button>
       <button
         className={`hamburger-btn ${menuOpen ? 'active' : ''}`}
         onClick={toggleMenu}
@@ -67,31 +89,14 @@ const Header = ({onContactClick}) => {
           height="32"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            className="line line1"
-            d="M4 6H20"
-            stroke="#000"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-          <path
-            className="line line2"
-            d="M4 12H20"
-            stroke="#000"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-          <path
-            className="line line3"
-            d="M4 18H20"
-            stroke="#000"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
+          <path className="line line1" d="M4 6H20" stroke="#000" strokeWidth="2" strokeLinecap="round" />
+          <path className="line line2" d="M4 12H20" stroke="#000" strokeWidth="2" strokeLinecap="round" />
+          <path className="line line3" d="M4 18H20" stroke="#000" strokeWidth="2" strokeLinecap="round" />
         </svg>
       </button>
+        </div>
+      )}
 
-      {/* Мобильное меню (если открыто) */}
       {menuOpen && (
         <nav className="menu">
           {navLinks.map((link, index) => (
@@ -102,18 +107,16 @@ const Header = ({onContactClick}) => {
               smooth={true}
               duration={500}
               offset={-150}
-              onClick={() => setMenuOpen(false)} // закрываем при клике
+              onClick={() => setMenuOpen(false)}
             >
               {link.label}
             </Link>
           ))}
           <Language />
-          
           <button className="shadow__btn" onClick={onContactClick}>
-  <i className="fas fa-phone" style={{ color: 'white', fontSize: '24px' }}></i>
-  Связаться
-</button>
-          
+            <i className="fas fa-phone" style={{ color: 'white', fontSize: '24px' }}></i>
+            Связаться
+          </button>
         </nav>
       )}
     </header>

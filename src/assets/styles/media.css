@@ -5,9 +5,10 @@
 	}
 
 	.banner__text {
-		font-weight: 800;
+		font-weight: 900;
 		font-size: 54px;
 		width: 450px;
+		font-family: 'Roboto Flex';
 	}
 
 	.banner__video .video__slogan {
@@ -40,9 +41,13 @@
 
 /* ========== 1210px и меньше ========== */
 @media (max-width: 1210px) {
+	.banner {
+		backdrop-filter: blur(1px);
+	}
 	.form-container {
 		max-width: 450px;
-		height: 492px;
+		height: 510px;
+
 	}
 	.banner__video {
 		max-width: 490px;
@@ -98,22 +103,44 @@
 
 /* ========== 768px и меньше ========== */
 @media (max-width: 768px) {
+	.logo img{
+		width: 30vw !important;
+	}
+
 	.header {
 		justify-content: space-around;
+	}
+
+	.contact-modal{
+		max-width: 400px !important;
+		flex-direction: column-reverse;
+		
+	}
+
+	.call-btn{
+		position: static;
+		margin: 0 auto;
 	}
 
 	.header .link_list {
 		display: none;
 		position: relative;
 	}
-
-	.language-container {
-		position: absolute;
-		top: 0;
-		right: 0;
-		z-index: 9999;
+	.header-mobile-right{
+		display: flex;
+		align-items: center;
+		gap: 20px;
 	}
-
+	.header-mobile-right .shadow__btn{
+		width: 0;
+		height: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.header-mobile-right .shadow__btn i{
+		font-size: 20px !important;
+	}
 	.container {
 		max-width: 900px;
 		width: 100%;
@@ -133,7 +160,18 @@
 	.banner__video {
 		width: 100%;
 	}
-
+	.contact-modal{
+		width: 330px;
+	}
+	.contact-item span a{
+		font-size: 16px;
+	}
+	.contact-item img{
+		width: 43px;
+	}
+	.call-btn{
+			padding: 10px 30px;
+	}
 	.banner__video .video__slogan {
 		font-size: 17px;
 	}
@@ -149,17 +187,46 @@
 
 	.form-container {
 		max-width: 400px;
+		height: 470px;
 	}
 
 	.form-container h2 {
 		font-size: 24px;
 	}
-
+	.input-group input{
+		border-radius: 14px;
+		padding: 10px 25px;
+	}
+	.PhoneInput .PhoneInputCountry{
+		padding: 20px 15px;
+	}
+	.PhoneInput input{
+		padding: 0 10px;
+	}
 	.dropdown-display span {
 		font-size: 16px;
 	}
+	.banner{
+		padding: 16px;
+	}
 }
 @media (max-width:495px) {
+.contact-modal{
+		width: 300px;
+	}
+	.contact-item span a{
+		font-size: 14px;
+	}
+	.contact-item img{
+		width: 43px;
+	}
+	.call-btn{
+			padding: 10px 30px;
+	}
+
+	.logo img{
+		width: 40vw;
+	}
 	.dropdown-menu li{
 		font-size: 16px;
 	}
@@ -175,12 +242,12 @@
 		font-size: 18px;
 	}
 	.input-group input{
-		padding: 12px 8px;
+		padding: 10px 10px;
 		font-size: 16px;
 	}
 
 	.PhoneInput .PhoneInputCountry{
-		padding: 24px 20px;
+		padding: 12px 14px;
 	}
 
 	.banner__video{
@@ -189,10 +256,37 @@
 	}
 	.dropdown-display span{
 		font-size: 12px;
+		padding: 5px 10px;
 	}
+	.dropdown-arrow{
+		width: 40px;
+		height: 40px;
+	}
+	
 }
 
 @media (max-width:390px) {
+	.contact-modal{
+		width: 250px;
+		gap: 5px;
+	}
+	.contact-item span a{
+		font-size: 12px;
+	}
+	.contact-item img{
+		width: 33px;
+		height: 45px;
+	}
+	.call-btn{
+		margin-top: 10px;
+		padding: 8px 25px;
+	}
+	.logo img{
+		width: 50vw;
+	}
+	.banner__left{
+		gap: 10px;
+	}
 	.banner__text{
 		font-size: 24px;
 		max-width: 250px;
@@ -219,6 +313,10 @@
 		max-width: 250px;
 		height: 200px;
 	}
+
+	.banner__video .video__slogan{
+		font-size: 12px;
+	}
 	.dropdown__wrapper{
 		flex-direction: column;
 	}
@@ -234,7 +332,13 @@
 		height: 40px;
 	}
 }
-@media (max-width:320px) {
+@media (max-width:331px) {
+	.banner{
+		padding: 10px;
+	}
+	.banner__left{
+		gap: 10px;
+	}
 	.banner__text{
 		font-size: 20px;
 		width: 200px;
@@ -247,6 +351,9 @@
 	.form-container h2{
 		font-size: 12px;
 		width: 170px;
+	}
+	.banner__video{
+		max-width: 200px;
 	}
 }
 @media (max-width:290px) {
