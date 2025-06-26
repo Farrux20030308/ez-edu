@@ -214,24 +214,23 @@ color: #000;
 
 
 .courses-box-details p {
-  margin: 10px 0;
+
   font-family: 'Roboto Flex', sans-serif;
   font-weight: 400;
   font-size: 26px;
-  line-height: 125%;
+
   color: #000;
 }
 
-.courses-box-details p strong {
-  font-weight: 900;
-}
+
 
 .courses-box-details ol {
   padding-left: 20px;
 }
-.courses-box-details ol li{
+.courses-box-details h5{
+  margin-top: 20px;
   font-family: 'Roboto Flex', sans-serif;
-  font-weight: 400;
+  font-weight: 900;
   font-size: 22px;
   line-height: 125%;
   color: #000;

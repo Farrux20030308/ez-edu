@@ -108,7 +108,7 @@ const Courses = ({onContactClick}) => {
       text: 'Занятия полностью подстроенные под студента',
       description:
         'Занятия полностью подстроены под ученика, на основе начального уровня, целей, слабых сторон и сроков.',
-      duration: '8 - 12 месяцев',
+      duration: '3 - 18 месяцев',
       time: '80 минут',
       format: 'Один на один с преподавателем',
       age: 'От 12 лет',
@@ -197,7 +197,8 @@ const Courses = ({onContactClick}) => {
 
                 {showDetailsIndex === index && (
                   <div className="courses-box-details">
-                    <p><strong>Краткое описание:</strong> {item.description}</p>
+                    <h5>Краткое описание:</h5>
+                    <p> {item.description}</p>
                     <h5>Ключевые отличия:</h5>
                     <ol>
                       {item.features.map((feature, i) => (
