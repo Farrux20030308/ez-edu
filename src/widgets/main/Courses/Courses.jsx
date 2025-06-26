@@ -213,13 +213,12 @@ const Courses = ({onContactClick}) => {
         </div>
       </section>
 
-      <CoursesSheet onContactClick={onContactClick}
+      {/* <CoursesSheet onContactClick={onContactClick}
         isOpen={isSheetOpen}
         onClose={() => setIsSheetOpen(false)}
         course={selectedCourse}
           index={selectedIndex}
-
-      />
+      /> */}
     </Element>
   );
 };
