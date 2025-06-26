@@ -1,4 +1,4 @@
-import './footer.css'
+import './Footer.css'
 import insta from '../../assets/icons/insta_icon.svg'
 import tg from '../../assets/icons/tg_icon.svg'
 import whatsapp from '../../assets/icons/whatsapp_icon.svg'
