@@ -4,7 +4,7 @@ import tg from '../../assets/icons/tg_icon.svg'
 import whatsapp from '../../assets/icons/whatsapp_icon.svg'
 import phone from '../../assets/icons/phone_icon.svg'
 import mail from '../../assets/icons/mail_icon.svg'
-import logo from '../../assets/icons/logo2.png'
+import logo from '../../assets/icons/Logo2.png'
 import { Link } from 'react-scroll'
 import { useState } from 'react';
 
