@@ -45,12 +45,14 @@ background-clip: text;
 .banner__video{
 border: 1px solid #9f9f9f;
 border-radius: 14px;
-width: 590px;
-height: 284px;
+width: 100%;
+max-width: 590px;
+height: 280px;
 box-shadow: inset 0 0 16px 0 rgba(0, 0, 0, 0.25);
 background: #fff;
 display: flex;
 align-items: center;
+aspect-ratio: 16 / 9;
 justify-content: center;
 }
 

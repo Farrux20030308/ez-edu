@@ -6,13 +6,13 @@ import Banner from './MainPage/Banner';
 import Reviews from './Reviews/Reviews';
 
 
-const Main=()=>{
+const Main=({onContactClick})=>{
     return(
         <main className='main'>
         <Banner />
         <ForWho />
-        {/*<Courses />
-        <Reviews />
+        <Courses onContactClick={onContactClick}/>
+        {/*<Reviews />
         <FAQs /> */}
         </main>
     )

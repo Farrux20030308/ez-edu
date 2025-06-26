@@ -6,7 +6,7 @@
   border: 1px solid #9f9f9f;
   border-radius: 27px;
   padding: 22px;
-
+  width: 95%;
   backdrop-filter: blur(3px);
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.25);
   background: rgba(255, 255, 255, 0.01);
@@ -32,7 +32,9 @@ scale: 1.02;
 
 .courses-wrapper {
   flex-wrap: wrap;
-display: flex;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, 4fr));
+
 
   gap: 24px; /* расстояние между элементами */
   position: relative;
@@ -104,7 +106,7 @@ display: flex;
   
 }
 
-.courses-box-left img {
+.courses-box-left .image {
   width: 100%;
   max-width: 170px;
   transition: filter 0.3s ease, max-width 0.3s ease;

@@ -5,12 +5,13 @@
     border-radius: 0 0 24px 24px;
     background-color: inherit;
     padding: 10px 54px;
-    position: sticky;
+    position: fixed;
     top: 0;
     background: #fff;
     box-shadow: 0 0 21px 0 rgba(0, 0, 0, 0.25);
     width: 100%;
-    z-index: 999;
+    
+    z-index: 10000;
 }
 .header .link_list{
     display: flex;

@@ -56,10 +56,10 @@ transition: box-shadow .5s ease, scale .5s ease;
 }
 
 .for__who-box h3{
+    width: 400px;
     font-family: 'Roboto Flex';
 font-weight: 700;
-font-size: 32px;
-line-height: 100%;
+font-size: 24px;
 text-align: center;
 color: #000;
 }
@@ -67,8 +67,8 @@ color: #000;
 .for__who-box p{
     font-family: 'Roboto Flex';
 font-weight: 500;
-width: 315px;
-font-size: 16px;
+width: 250px;
+font-size: 14px;
 line-height: 100%;
 text-align: center;
 color: #000;

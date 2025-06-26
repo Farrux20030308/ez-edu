@@ -7,10 +7,13 @@
 	.banner__text {
 		font-weight: 900;
 		font-size: 54px;
-		width: 450px;
+		
 		font-family: 'Roboto Flex';
 	}
-
+	.banner__video{
+		height: 290px;
+		
+	}
 	.banner__video .video__slogan {
 		font-size: 18px;
 	}
@@ -51,6 +54,17 @@
 		font-size: 13px;
 		width: 90%;
 	}
+	.for__who-wrapper{
+		grid-template-columns: repeat(auto-fit, minmax(150px, 4fr));
+	}
+	
+	.for__who-box img{
+		width: 75%;
+	}
+	.for__who-box p{
+		max-width: 250px;
+		width: 100%;
+	}
 	.banner {
 		backdrop-filter: blur(1px);
 	}
@@ -60,7 +74,11 @@
 
 	}
 	.banner__video {
-		max-width: 490px;
+		max-width: 520px;
+		height: 300px;
+	}
+	.banner__text{
+		max-width: 500px;
 	}
 }
 
@@ -72,19 +90,50 @@
 }
 
 /* ========== 1050px и меньше ========== */
-@media (max-width: 1050px) {
+@media (max-width: 1058px) {
+	.courses{
+		max-width: 500px;
+		padding: 15px;
+	}
+	.courses-wrapper{
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: 15px;
+	}
 	.for__who{
 		margin-top: 10px 	;
-		width: 500px;
+		max-width: 500px;
+		width: 100%;
+		padding: 10px;
+		padding-bottom: 15px;
 	}
+	.for__who-wrapper{
+		width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 10px;
+		row-gap: 15px;
+        padding: 0;
+	}
+	.for__who-box{
+		width: 47%;
+		gap: 10px;
+		height: 300px;
+		padding: 10px;
+	}	
 	.for__who h2{
+		padding-left: 10px;
 		font-size: 38px;
 	}
 	.for__who-box h3{
-		font-size: 32px;
+		font-size: 22px;
+	}
+	.for__who-box img{
+		width: 150px;
 	}
 	.for__who-box p{
-		font-size: 16px;
+		font-size: 14px;
 	}
 	.banner__text {
 		font-size: 46px;
@@ -126,7 +175,9 @@
 
 /* ========== 768px и меньше ========== */
 @media (max-width: 768px) {
-	
+	.courses h2{
+		font-size: 40px;
+	}
 	.logo img{
 		width: 30vw !important;
 	}
@@ -152,6 +203,7 @@
 	}
 	.header-mobile-right{
 		display: flex;
+		
 		align-items: center;
 		gap: 20px;
 	}
@@ -166,7 +218,7 @@
 		font-size: 20px !important;
 	}
 	.container {
-		max-width: 900px;
+		max-width: 510px;
 		width: 100%;
 	}
 
@@ -178,24 +230,35 @@
 		max-width: 450px;
 	}
 	.for__who{
-		width: 500px;
+		max-width: 500px;
 	}
 	.for__who-box h3{
-		font-size: 32px;
+		font-size: 23px;
 	}
 	.for__who-box p{
-		font-size: 16px;
+		font-size: 14px;
 	}
 }
 
 /* ========== 552px и меньше ========== */
-@media (max-width: 552px) {
+@media (max-width: 558px) {
+	.left__image{
+		width: 70px !important;
+	}
 	.for__who{
-		width: 440px;
+		max-width: 450px;
 	}
-	.banner__video {
-		width: 100%;
+	.courses-box-left .image{
+		width: 100px;
 	}
+	.courses-box-left{
+		height: 322px;
+	}
+	.courses-box{
+		min-height: 322px;
+		height: 322px;
+	}
+
 	.contact-modal{
 		width: 330px;
 	}
@@ -208,9 +271,7 @@
 	.call-btn{
 			padding: 10px 30px;
 	}
-	.banner__video .video__slogan {
-		font-size: 17px;
-	}
+
 
 	.banner__text {
 		font-size: 34px;
@@ -218,16 +279,17 @@
 	}
 
 	.container {
-		max-width: 500px;
+		max-width: 365px;
 	}
 
 	.form-container {
-		max-width: 400px;
-		height: 470px;
+		max-width: 320px;
+		height: 520px;
 	}
 
 	.form-container h2 {
-		font-size: 24px;
+		width: 300px;
+		font-size: 18px;
 	}
 	.input-group input{
 		border-radius: 14px;
@@ -239,19 +301,39 @@
 	.PhoneInput input{
 		padding: 0 10px;
 	}
+	.dropdown__wrapper{
+		flex-direction: column;
+	}
 	.dropdown-display span {
 		font-size: 16px;
 	}
 	.banner{
 		padding: 16px;
 	}
+	.banner__video{
+		width: 320px;
+	}
+	.banner__video .video__slogan{
+		font-size: 15px;
+	}
 }
 @media (max-width:495px) {
+	
 	.for__who{
 		width: 365px;
 	}
 	.for__who h2{
-		font-size: 28px;
+		font-size: 26px;
+	}
+	.for__who-box img{
+		width: 70%;
+	}
+	.for__who-box{
+		height: 250px;
+	}
+	.for__who-box h3{
+		font-size: 16px;
+		width: 150px;
 	}
 .contact-modal{
 		width: 300px;
@@ -278,6 +360,7 @@
 	
 	.form-container{
 		max-width: 330px;
+		height: 490px;
 	}
 	.form-container h2{
 		max-width: 270px;
@@ -308,6 +391,27 @@
 }
 
 @media (max-width:390px) {
+	.container{
+		max-width: 285px;
+	}
+	.courses{
+		display: flex;
+	}
+	.courses-wrapper{
+		display: flex;
+	}
+	.courses-box{
+		width: 47%;
+	}
+	.courses-box .image{
+		width: 80px;
+	}
+	.courses-box h3{
+		font-size: 22px;
+	}
+	.courses-box p{
+		font-size: 12px;
+	}
 	.for__who{
 		width: 285px;
 		padding: 16px;
@@ -315,9 +419,15 @@
 	}
 	.for__who h2{
 		font-size: 24px;
+		line-height: 100%;
+	}
+	.for__who-box h3{
+		width: 100px;
+		font-size: 16px;
 	}
 	.for__who-box p{
 		width: 100%;
+		font-size: 12px;
 	}
 	.contact-modal{
 		width: 250px;

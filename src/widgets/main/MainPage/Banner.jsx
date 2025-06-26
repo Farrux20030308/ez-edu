@@ -8,7 +8,7 @@ const Banner = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1050);
+      setIsMobile(window.innerWidth <= 1058);
     };
 
     handleResize(); // первоначально
@@ -18,7 +18,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <Element id="banner" name="banner">
+    <Element name="banner">
       <section className="banner__wrapper">
         <div className="banner container">
           {isMobile ? (
