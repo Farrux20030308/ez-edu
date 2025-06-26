@@ -12,6 +12,7 @@ import calendar from '../../../assets/icons/calendar.svg';
 import cap from '../../../assets/icons/cap.svg';
 import format from '../../../assets/icons/format.svg';
 import time from '../../../assets/icons/time.svg';
+import { fa } from 'intl-tel-input/i18n';
 
 const Courses = ({onContactClick}) => {
   // 🔵 Состояния
@@ -20,7 +21,7 @@ const Courses = ({onContactClick}) => {
   const [showDetailsIndex, setShowDetailsIndex] = useState(null);
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1058);
+  const [isMobile, setIsMobile] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   // 🔵 Ссылки
@@ -31,6 +32,7 @@ const Courses = ({onContactClick}) => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1058);
     };
+    handleResize()
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -213,12 +215,12 @@ const Courses = ({onContactClick}) => {
         </div>
       </section>
 
-      {/* <CoursesSheet onContactClick={onContactClick}
+      <CoursesSheet onContactClick={onContactClick}
         isOpen={isSheetOpen}
         onClose={() => setIsSheetOpen(false)}
         course={selectedCourse}
           index={selectedIndex}
-      /> */}
+      />
     </Element>
   );
 };
