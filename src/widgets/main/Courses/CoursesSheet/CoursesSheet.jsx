@@ -32,9 +32,10 @@ const CoursesSheet = ({ isOpen, onClose, course, index, onContactClick }) => {
             <div className="keys">
               <h4 className="features-label">Ключевые отличия:</h4>
             <ol>
-              {course.features.map((f, i) => (
-                <li className='features-keys' key={i}>{f}</li>
-              ))}
+              {Array.isArray(course?.features) && course.features.map((f, i) => (
+  <li key={i}>{f}</li>
+))}
+
             </ol>
             </div>
             <div className="course-info">
