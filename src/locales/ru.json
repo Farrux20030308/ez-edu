@@ -1,0 +1,11 @@
+{
+  "header": {
+    "nav": [
+      { "to": "ForWho", "label": "Для кого" },
+      { "to": "courses", "label": "Курсы" },
+      { "to": "reviews", "label": "Отзывы" },
+      { "to": "faq", "label": "Вопросы" }
+    ],
+    "contact": "Связаться"
+  }
+}

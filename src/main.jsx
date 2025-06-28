@@ -1,12 +1,15 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import App from './App.jsx';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
+import { I18nProvider } from './locales'; // ← подключаем i18n
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <I18nProvider>
+      <App />
+    </I18nProvider>
+  </StrictMode>
+);
