@@ -71,7 +71,9 @@ const CoursesSheet = ({ isOpen, onClose, course, index, onContactClick }) => {
       </Sheet.Container>
       <Sheet.Backdrop onTap={onClose} />
     </Sheet>
+    
   );
+  
 };
 
 export default CoursesSheet;
