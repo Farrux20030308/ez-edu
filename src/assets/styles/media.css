@@ -176,10 +176,7 @@
 
 /* ========== 768px и меньше ========== */
 @media (max-width: 768px) {
-	*:hover{
-		scale: 1 !important;
 	
-	}
 	.courses h2{
 		font-size: 40px;
 	}
@@ -227,6 +224,8 @@
 	}
 	.container:hover{
     box-shadow: 0 0 21px 0 rgba(0, 0, 0, 0.25);
+		scale: 1 !important;
+
 		
 	}
 

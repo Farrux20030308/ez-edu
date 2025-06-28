@@ -14,12 +14,12 @@ const CoursesSheet = ({ isOpen, onClose, course, index, onContactClick }) => {
 
   return (
     <Sheet
-      className="sheet-wrapper"
-      isOpen={isOpen}
-      onClose={onClose}
-      snapPoints={[600, 600, 0]}
-      initialSnap={1}
-    >
+  isOpen={isOpen}
+  onClose={onClose}
+  snapPoints={[1, 1, 0]}
+  initialSnap={0}
+  detent="content-height"
+>
       <Sheet.Container>
         <Sheet.Header />
         <Sheet.Content>
