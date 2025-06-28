@@ -7,5 +7,36 @@
       { "to": "faq", "label": "Вопросы" }
     ],
     "contact": "Связаться"
+    
+    
+  },
+  "modal": {
+  "call": "Позвонить",
+  "telegram": "Наш Telegram",
+  "whatsapp": "Наш WhatsApp",
+  "instagram": "Наш Instagram",
+  "gmail": "Почта Gmail"
+},
+  "form": {
+    "title": "Запишитесь на <span class='highlight'>бесплатный</span> пробный урок!",
+    "namePlaceholder": "Введите свое имя",
+    "telegramPlaceholder": "@Telegram",
+    "submit": "Записаться",
+    "modalSuccess": "Форма успешно отправлена!",
+    "modalError": "Ошибка при отправке формы. Попробуйте еще раз.",
+    "modalEmpty": "Пожалуйста, заполните все поля.",
+    "role": {
+      "default": "Кто вы?",
+      "parent": "Я родитель",
+      "student": "Я ученик"
+    },
+    "course": {
+      "default": "Тип курса",
+      "notChosen": "Не выбрал(а)"
+    }
+  },
+  "banner": {
+    "title": "Английский — онлайн, просто и удобно",
+    "slogan": "\"EZ education — проще, чем кажется\""
   }
 }

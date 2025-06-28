@@ -1,1 +1,40 @@
-{}
+{
+  "header": {
+    "nav": [
+      { "to": "ForWho", "label": "For Who" },
+      { "to": "courses", "label": "Courses" },
+      { "to": "reviews", "label": "Reviews" },
+      { "to": "faq", "label": "FAQ" }
+    ],
+    "contact": "Contact us"
+  },
+  "modal": {
+  "call": "Call",
+  "telegram": "Our Telegram",
+  "whatsapp": "Our WhatsApp",
+  "instagram": "Our Instagram",
+  "gmail": "Gmail"
+},
+   "form": {
+    "title": "Sign up for a <span class='highlight'>free</span> trial lesson!",
+    "namePlaceholder": "Enter your name",
+    "telegramPlaceholder": "@Telegram",
+    "submit": "Sign Up",
+    "modalSuccess": "Form submitted successfully!",
+    "modalError": "Error submitting the form. Please try again.",
+    "modalEmpty": "Please fill in all fields.",
+    "role": {
+      "default": "Who are you?",
+      "parent": "I am a parent",
+      "student": "I am a student"
+    },
+    "course": {
+      "default": "Course type",
+      "notChosen": "Not chosen"
+    }
+  },
+  "banner": {
+    "title": "English — online, easy and convenient",
+    "slogan": "\"EZ education — easier than it seems\""
+  }
+}

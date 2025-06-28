@@ -245,10 +245,25 @@
 	.for__who-box p{
 		font-size: 14px;
 	}
+	.reviews h2{
+		font-size: 40px;
+		padding-inline: 16vw;
+	}
 	
+	.review-card{
+		width: 300px;
+	}
+	.review-card-header strong{
+		font-size: 28px;
+	}
+	.review-content p{
+		font-size: 15px;
+	}
+	.review-meta li{
+		font-size: 10px;
+	}
 }
 
-/* ========== 552px и меньше ========== */
 @media (max-width: 558px) {
 	.courses{
 	width: 90% !important;

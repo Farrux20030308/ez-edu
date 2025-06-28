@@ -3,13 +3,16 @@ import "./form.css";
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 import { FaChevronDown, FaChevronUp, FaSpinner } from "react-icons/fa";
+import { useTranslation } from '../../../../contexts/I18nContext';
 
 const Form = () => {
+  const { t } = useTranslation();
+
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [telegram,setTelegram] = useState("")
-  const [selectedRole, setSelectedRole] = useState("Кто вы?");
-  const [selectedOption, setSelectedOption] = useState("Тип курса");
+  const [telegram, setTelegram] = useState("");
+const [selectedRole, setSelectedRole] = useState("");
+const [selectedOption, setSelectedOption] = useState("");
   const [modalMessage, setModalMessage] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [optionDropdownOpen, setOptionDropdownOpen] = useState(false);
@@ -17,27 +20,30 @@ const Form = () => {
   const [showModal, setShowModal] = useState(false);
   const [nameError, setNameError] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
-const roleRef = useRef(null);
-const optionRef = useRef(null);
 
+  const roleRef = useRef(null);
+  const optionRef = useRef(null);
 useEffect(() => {
-  const handleClickOutside = (event) => {
-    if (roleRef.current && !roleRef.current.contains(event.target)) {
-      setDropdownOpen(false);
-    }
-    if (optionRef.current && !optionRef.current.contains(event.target)) {
-      setOptionDropdownOpen(false);
-    }
-  };
+  setSelectedRole(t("form.role.default"));
+  setSelectedOption(t("form.course.default"));
+}, [t]);
 
-  document.addEventListener("mousedown", handleClickOutside);
-  return () => {
-    document.removeEventListener("mousedown", handleClickOutside);
-  };
-}, []);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (roleRef.current && !roleRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+      if (optionRef.current && !optionRef.current.contains(event.target)) {
+        setOptionDropdownOpen(false);
+      }
+    };
 
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
- 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -52,7 +58,7 @@ useEffect(() => {
     }
 
     if (!valid) {
-      setModalMessage("Пожалуйста, заполните все поля.");
+      setModalMessage(t("form.modalEmpty"));
       setShowModal(true);
       return;
     }
@@ -61,46 +67,35 @@ useEffect(() => {
     const date = now.toLocaleDateString();
     const time = now.toLocaleTimeString('ru-RU', {
       hour: '2-digit',
-      minute:'2-digit'
+      minute: '2-digit'
     });
-    console.log(time);
-    
-
-    
 
     setIsLoading(true);
     try {
- const formData = {
-  Date: date,
-  Time: time,
-  Character: selectedRole === "Кто вы?" ? "❌" : selectedRole,
-  Course: selectedOption === "Тип курса" ? "❌" : selectedOption,
-  Name: name,
-  "Phone-number": phone,
-  Telegram: telegram ==='' ? "❌" : telegram
-};
+      const formData = {
+        Date: date,
+        Time: time,
+        Character: selectedRole === t("form.role.default") ? "❌" : selectedRole,
+        Course: selectedOption === t("form.course.default") ? "❌" : selectedOption,
+        Name: name,
+        "Phone-number": phone,
+        Telegram: telegram === '' ? "❌" : telegram
+      };
 
-const response = await fetch("https://script.google.com/macros/s/AKfycbzRtlRQbVP7CWYUxkQOry-kpKoiYfjI1ZdF5ZkDQW4xdNhYBbgw_kMJ_NGMJ7fbexyJFQ/exec", {
-  method: "POST",
-  body: new URLSearchParams(formData),
-});
+      await fetch("https://script.google.com/macros/s/AKfycbzRtlRQbVP7CWYUxkQOry-kpKoiYfjI1ZdF5ZkDQW4xdNhYBbgw_kMJ_NGMJ7fbexyJFQ/exec", {
+        method: "POST",
+        body: new URLSearchParams(formData),
+      });
 
-const result = await response.json();
-console.log(result);
-
-
-     
-
-      setModalMessage("Форма успешно отправлена!");
+      setModalMessage(t("form.modalSuccess"));
       setShowModal(true);
       setName("");
       setPhone("");
-      setTelegram("")
-      setSelectedRole("Кто вы?");
-      setSelectedOption("Тип курса");
-    } catch (error) {
-      console.error("Ошибка при отправке формы:", error);
-      setModalMessage("Ошибка при отправке формы. Попробуйте еще раз.");
+      setTelegram("");
+      setSelectedRole(t("form.role.default"));
+      setSelectedOption(t("form.course.default"));
+    } catch {
+      setModalMessage(t("form.modalError"));
       setShowModal(true);
     } finally {
       setIsLoading(false);
@@ -113,18 +108,19 @@ console.log(result);
         <div className="modal-overlay">
           <div className="modal">
             <p>{modalMessage}</p>
-            <button onClick={() => setShowModal(false)}>ОК</button>
+            <button onClick={() => setShowModal(false)}>OK</button>
           </div>
         </div>
       )}
-      <h2>Запишитесь на <span className="highlight">бесплатный</span> пробный урок!</h2>
+
+      <h2 dangerouslySetInnerHTML={{ __html: t("form.title") }} />
+
       <form onSubmit={handleSubmit} name="submit-to-google-sheet">
         <div className="form__group">
-          
           <div className="input-group">
             <input
               type="text"
-              placeholder="Введите свое имя"
+              placeholder={t("form.namePlaceholder")}
               value={name}
               onChange={(e) => {
                 setName(e.target.value);
@@ -142,30 +138,27 @@ console.log(result);
                   setPhoneError(false);
                 }}
               />
-
             </div>
-                <input
-  type="text"
-  placeholder="@Telegram"
-  value={telegram}
-  onChange={(e) => {
-    let value = e.target.value;
-    value = '@' + value.replace(/^@+/, '');
-    setTelegram(value);
-  }}
-  onBlur={() => {
-    if (telegram.trim() === '@') {
-      setTelegram('');
-    }
-  }}
-/>
+            <input
+              type="text"
+              placeholder={t("form.telegramPlaceholder")}
+              value={telegram}
+              onChange={(e) => {
+                let value = e.target.value;
+                value = '@' + value.replace(/^@+/, '');
+                setTelegram(value);
+              }}
+              onBlur={() => {
+                if (telegram.trim() === '@') {
+                  setTelegram('');
+                }
+              }}
+            />
           </div>
+
           <div className="dropdown__wrapper">
             <div className="dropdown-container" ref={roleRef}>
-              <div
-                className="dropdown-display"
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-              >
+              <div className="dropdown-display" onClick={() => setDropdownOpen(!dropdownOpen)}>
                 <span>{selectedRole}</span>
                 <div className="dropdown-arrow">
                   {dropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
@@ -173,26 +166,17 @@ console.log(result);
               </div>
               {dropdownOpen && (
                 <ul className="dropdown-menu">
-                  {["Я родитель", "Я ученик"].map((role, index) => (
-                    <li
-                      key={index}
-                      onClick={() => {
-                        setSelectedRole(role);
-                        setDropdownOpen(false);
-                      }}
-                   
-                    >
+                  {[t("form.role.parent"), t("form.role.student")].map((role, index) => (
+                    <li key={index} onClick={() => { setSelectedRole(role); setDropdownOpen(false); }}>
                       {role}
                     </li>
                   ))}
                 </ul>
               )}
             </div>
+
             <div className="dropdown-container" ref={optionRef}>
-              <div
-                className="dropdown-display"
-                onClick={() => setOptionDropdownOpen(!optionDropdownOpen)}
-              >
+              <div className="dropdown-display" onClick={() => setOptionDropdownOpen(!optionDropdownOpen)}>
                 <span>{selectedOption}</span>
                 <div className="dropdown-arrow">
                   {optionDropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
@@ -200,16 +184,8 @@ console.log(result);
               </div>
               {optionDropdownOpen && (
                 <ul className="dropdown-menu">
-                  {["Не выбрал(а)","General","Individual","Kids",'IELTS'].map((option, index) => (
-                    <li
-                      key={index}
-                      onClick={() => {
-                        setSelectedOption(option);
-                        setOptionDropdownOpen(false);
-                        
-                      }}
-                     
-                    >
+                  {[t("form.course.notChosen"), "General", "Individual", "Kids", "IELTS"].map((option, index) => (
+                    <li key={index} onClick={() => { setSelectedOption(option); setOptionDropdownOpen(false); }}>
                       {option}
                     </li>
                   ))}
@@ -218,21 +194,11 @@ console.log(result);
             </div>
           </div>
         </div>
-        <button
-          type="submit"
-          className="submit-button"
-          disabled={isLoading}
-        >
-          {isLoading ? (
-            <FaSpinner className="spinner-icon" />
-          ) : (
-            "Записаться"
-          )}
-        </button>
-         
-      </form>
 
-     
+        <button type="submit" className="submit-button" disabled={isLoading}>
+          {isLoading ? <FaSpinner className="spinner-icon" /> : t("form.submit")}
+        </button>
+      </form>
     </div>
   );
 };

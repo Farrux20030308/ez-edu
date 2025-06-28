@@ -1,9 +1,9 @@
 import "./language.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import flagEn from "../../../assets/icons/eng.png";
 import flagRu from "../../../assets/icons/rus.png";
 import flagUz from "../../../assets/icons/uzb.png";
-
+import { useTranslation } from '../../../contexts/I18nContext';
 
 const languages = [
   { code: "en", label: "English", flag: flagEn },
@@ -12,13 +12,25 @@ const languages = [
 ];
 
 const Language = () => {
-  const [selectedLang, setSelectedLang] = useState(languages[0]);
+  const { changeLanguage } = useTranslation();
   const [open, setOpen] = useState(false);
+
+  // Загружаем текущий язык из localStorage или по умолчанию 'ru'
+  const initialLangCode = localStorage.getItem('lang') || 'ru';
+  const [selectedLang, setSelectedLang] = useState(
+    languages.find((lang) => lang.code === initialLangCode) || languages[1]
+  );
+
+  useEffect(() => {
+    changeLanguage(selectedLang.code);
+  }, [selectedLang, changeLanguage]);
 
   const toggleOpen = () => setOpen((prev) => !prev);
 
   const handleSelect = (lang) => {
     setSelectedLang(lang);
+    localStorage.setItem('lang', lang.code);
+    changeLanguage(lang.code);
     setOpen(false);
   };
 

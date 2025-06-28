@@ -12,8 +12,8 @@ const Main=({onContactClick})=>{
         <Banner />
         <ForWho />
         <Courses onContactClick={onContactClick}/>
-        {/*<Reviews />
-        <FAQs /> */}
+        <Reviews />
+       {/* <FAQs /> */}
         </main>
     )
 }

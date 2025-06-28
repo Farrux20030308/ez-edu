@@ -1,1 +1,40 @@
-{}
+{
+  "header": {
+    "nav": [
+      { "to": "ForWho", "label": "Kimlar uchun" },
+      { "to": "courses", "label": "Kurslar" },
+      { "to": "reviews", "label": "Sharhlar" },
+      { "to": "faq", "label": "Savollar" }
+    ],
+    "contact": "Bog'lanish"
+  },
+  "form": {
+    "title": "<span class='highlight'>Bepul</span> sinov darsiga yoziling!",
+    "namePlaceholder": "Ismingizni kiriting",
+    "telegramPlaceholder": "@Telegram",
+    "submit": "Ro'yxatdan o'tish",
+    "modalSuccess": "Forma muvaffaqiyatli yuborildi!",
+    "modalError": "Formani yuborishda xatolik yuz berdi. Qaytadan urinib ko'ring.",
+    "modalEmpty": "Iltimos, barcha maydonlarni to'ldiring.",
+    "role": {
+      "default": "Siz kimsiz?",
+      "parent": "Men ota-onaman",
+      "student": "Men o'quvchiman"
+    },
+    "course": {
+      "default": "Kurs turi",
+      "notChosen": "Tanlanmagan"
+    }
+  },
+  "modal": {
+  "call": "Qo‘ng‘iroq qilish",
+  "telegram": "Bizning Telegram",
+  "whatsapp": "Bizning WhatsApp",
+  "instagram": "Bizning Instagram",
+  "gmail": "Gmail"
+},
+"banner": {
+    "title": "Ingliz tili — onlayn, oson va qulay",
+    "slogan": "\"EZ education — o‘ylagandan ham osonroq\""
+  }
+}

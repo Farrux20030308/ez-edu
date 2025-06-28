@@ -2,18 +2,19 @@ import { useEffect, useState } from 'react';
 import './Banner.css';
 import Form from './Form/form';
 import { Element } from 'react-scroll';
+import { useTranslation } from '../../../contexts/I18nContext';
 
 const Banner = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1058);
     };
 
-    handleResize(); // первоначально
+    handleResize();
     window.addEventListener('resize', handleResize);
-
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
@@ -22,21 +23,19 @@ const Banner = () => {
       <section className="banner__wrapper">
         <div className="banner container">
           {isMobile ? (
-            // 👇 Мобильная структура: текст + форма + видео ВМЕСТЕ
             <div className="banner__left">
-              <h2 className="banner__text">Английский - онлайн, просто и удобно</h2>
+              <h2 className="banner__text">{t('banner.title')}</h2>
               <Form />
               <div className="banner__video">
-                <h3 className="video__slogan">"EZ education - проще, чем кажется"</h3>
+                <h3 className="video__slogan">{t('banner.slogan')}</h3>
               </div>
             </div>
           ) : (
-            // 👇 Десктопная структура: текст + видео слева, форма справа
             <>
               <div className="banner__left">
-                <h2 className="banner__text">Английский - онлайн, просто и удобно</h2>
+                <h2 className="banner__text">{t('banner.title')}</h2>
                 <div className="banner__video">
-                  <h3 className="video__slogan">"EZ education - проще, чем кажется"</h3>
+                  <h3 className="video__slogan">{t('banner.slogan')}</h3>
                 </div>
               </div>
               <Form />

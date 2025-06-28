@@ -10,7 +10,7 @@
   outline: none;
 }
 body{
-  min-height: 350vh;
+  min-height: 450vh;
   background: url(./assets//img/bg.jpg);
   background-attachment: fixed;
   font-family: 'Roboto Flex' !important;

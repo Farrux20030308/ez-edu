@@ -1,21 +1,35 @@
 import { createContext, useContext, useState } from 'react';
-import {translations} from '../locales';
+import ru from '../locales/ru.json';
+import en from '../locales/en.json';
+import uz from '../locales/uz.json';
+let currentLang = localStorage.getItem('lang') || 'ru';
+const translations = { ru, en, uz };
 
 const I18nContext = createContext();
 
 export const I18nProvider = ({ children }) => {
-  const [lang, setLang] = useState('ru'); // Язык по умолчанию
+  const [language, setLanguage] = useState('ru');
 
   const t = (key) => {
     const keys = key.split('.');
-    return keys.reduce((obj, k) => (obj && obj[k] ? obj[k] : key), translations[lang]);
+    return keys.reduce((obj, k) => (obj && obj[k] !== undefined ? obj[k] : key), translations[language]);
+  };
+
+  const changeLanguage = (lang) => {
+    if (translations[lang]) setLanguage(lang);
   };
 
   return (
-    <I18nContext.Provider value={{ lang, setLang, t }}>
+    <I18nContext.Provider value={{ t, language, changeLanguage }}>
       {children}
     </I18nContext.Provider>
   );
 };
 
-export  const useI18n = () => useContext(I18nContext);
+export const useTranslation = () => useContext(I18nContext);
+export const setLang = (lang) => {
+  if (languages[lang]) {
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+  }
+};
