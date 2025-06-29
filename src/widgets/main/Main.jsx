@@ -13,7 +13,7 @@ const Main=({onContactClick})=>{
         <ForWho />
         <Courses onContactClick={onContactClick}/>
         <Reviews />
-       {/* <FAQs /> */}
+        <FAQs /> 
         </main>
     )
 }

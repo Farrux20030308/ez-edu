@@ -38,7 +38,7 @@ const App = () => {
 
      <Header onContactClick={() => setShowModal(true)} />
       <Main onContactClick={()=> setShowModal(true)} />
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }
