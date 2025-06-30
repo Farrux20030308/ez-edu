@@ -1,5 +1,5 @@
 import "./language.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import flagEn from "../../../assets/icons/eng.png";
 import flagRu from "../../../assets/icons/rus.png";
 import flagUz from "../../../assets/icons/uzb.png";
@@ -14,8 +14,8 @@ const languages = [
 const Language = () => {
   const { changeLanguage } = useTranslation();
   const [open, setOpen] = useState(false);
+  const containerRef = useRef(null);
 
-  // Загружаем текущий язык из localStorage или по умолчанию 'ru'
   const initialLangCode = localStorage.getItem('lang') || 'ru';
   const [selectedLang, setSelectedLang] = useState(
     languages.find((lang) => lang.code === initialLangCode) || languages[1]
@@ -34,8 +34,19 @@ const Language = () => {
     setOpen(false);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <div
+      ref={containerRef}
       className={`language-container ${open ? "open" : ""}`}
       onClick={toggleOpen}
       role="button"

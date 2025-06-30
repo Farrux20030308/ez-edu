@@ -3,7 +3,7 @@ import FAQs from './FAQs/FAQs';
 import ForWho from './ForWho/ForWho';
 import './Main.css'
 import Banner from './MainPage/Banner';
-import Reviews from './Reviews/Reviews';
+import ReviewCard from './Reviews/Reviews';
 
 
 const Main=({onContactClick})=>{
@@ -12,7 +12,7 @@ const Main=({onContactClick})=>{
         <Banner />
         <ForWho />
         <Courses onContactClick={onContactClick}/>
-        <Reviews />
+        <ReviewCard />
         <FAQs /> 
         </main>
     )

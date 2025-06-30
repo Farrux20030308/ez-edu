@@ -1,17 +1,14 @@
 import { useState, useRef, useEffect } from 'react';
 import './FAQs.css';
 import { Element } from 'react-scroll';
-const faqs = [
-  { question: 'Как проходит обучение?', answer: 'Обучение проходит в онлайн формате на платформе Google Meets' },
-  { question: 'Что необходимо иметь для занятий?', answer: 'Единственноe что вам будет нужно - это телефон, нуотбук или компьютер' },
-  { question: 'Нужны ли учебники?', answer: 'Нет, все необходимые материлы находяться в облаке, к которому есть доступ 24/7' },
-  { question: 'Когда я смогу заговорить?', answer: 'Наши студенты уже на первом месяце обучения начинают использованть простые предложения' },
-  { question: 'Что если я не знаю свой уровень?', answer: 'На пробном уроке учитель определит ваш уровень с помощью теста' },
-  { question: 'Насколько профессиональные преподаватели?', answer:'Минимальные требования к ним: IELTS 8, CEFR C1. Кроме этого они оцениваются нами отдельно' }
-];
+import { useTranslation } from '../../../contexts/I18nContext';
+
+
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { t } = useTranslation();
+  const faqs = t('faq.list');
 
   const toggleFAQ = (index) => {
     setActiveIndex((prev) => (prev === index ? null : index));
@@ -22,16 +19,17 @@ const FAQ = () => {
    <Element name='faq'>
      <section  className="faq__wrapper">
 <div className="faq container">
-      <h2>Часто задаваемые вопросы</h2>
-      {faqs.map((item, index) => (
-        <FAQItem
-          key={index}
-          question={item.question}
-          answer={item.answer}
-          isActive={activeIndex === index}
-          onClick={() => toggleFAQ(index)}
-        />
-      ))}
+     <h2>{t('faq.title')}</h2>
+{faqs.map((item, index) => (
+  <FAQItem
+    key={index}
+    question={item.question}
+    answer={item.answer}
+    isActive={activeIndex === index}
+    onClick={() => toggleFAQ(index)}
+  />
+))}
+
     </div>
     </section>
    </Element>

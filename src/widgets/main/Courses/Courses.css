@@ -125,9 +125,9 @@ grid-template-columns: repeat(auto-fit, minmax(150px, 4fr));
 }
 .courses-box-left h3 {
   font-family: 'Roboto Flex';
-  font-weight: 700;
+  font-weight: 600;
   font-size: 32px;
-  line-height: 234%;
+  line-height: 150%;
   text-align: center;
   color: #006EFB;
   width: 100%;
@@ -150,7 +150,7 @@ text-decoration-skip-ink: none
 
 .courses-box-left p {
   font-family: 'Roboto Flex';
-font-weight: 500;
+font-weight: 500; 
 font-size: 16px;
 line-height: 100%;
 text-align: center;
@@ -219,7 +219,7 @@ color: #000;
 
   font-family: 'Roboto Flex', sans-serif;
   font-weight: 400;
-  font-size: 26px;
+  font-size: 18px;
 
   color: #000;
 }

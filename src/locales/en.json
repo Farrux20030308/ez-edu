@@ -1,7 +1,7 @@
 {
   "header": {
     "nav": [
-      { "to": "ForWho", "label": "For Who" },
+      { "to": "ForWho", "label": "For" },
       { "to": "courses", "label": "Courses" },
       { "to": "reviews", "label": "Reviews" },
       { "to": "faq", "label": "FAQ" }
@@ -36,5 +36,156 @@
   "banner": {
     "title": "English — online, easy and convenient",
     "slogan": "\"EZ education — easier than it seems\""
-  }
+  },
+  "forWho": {
+  "title": "For",
+  "items": [
+    {
+      "title": "Education",
+      "text": "For those who want to enter foreign universities"
+    },
+    {
+      "title": "Work",
+      "text": "For working in international companies"
+    },
+    {
+      "title": "Travel",
+      "text": "For those who want to travel and make friends around the world"
+    },
+    {
+      "title": "Kids",
+      "text": "For kids to spark interest in languages"
+    }
+  ]
+},
+"coursesSheet": {
+  "description": "Short description:",
+  "features": "Key features:",
+  "signup": "Sign up"
+},
+"courses": {
+  "title": "Our Courses",
+  "shortDescription": "Short description:",
+  "keyFeatures": "Key features:",
+  "list": [
+    {
+      "title": "General",
+      "text": "Lessons in mini-groups",
+      "description": "Group lessons focused on general English skills, using programs developed at Oxford and Cambridge.",
+      "duration": "12 - 16 months",
+      "time": "80 minutes",
+      "format": "Mini-groups up to 6 people",
+      "age": "From 12 years old",
+      "features": [
+        "Strong group-based curriculum",
+        "Clear level division (Beginner - Advanced)",
+        "Group practice"
+      ]
+    },
+    {
+      "title": "Individual",
+      "text": "Lessons fully tailored to the student",
+      "description": "Lessons are fully tailored to the student based on their level, goals, weaknesses, and deadlines.",
+      "duration": "3 - 18 months",
+      "time": "80 minutes",
+      "format": "One-on-one with a teacher",
+      "age": "From 12 years old",
+      "features": [
+        "Personalized approach",
+        "Maximum efficiency",
+        "Fastest results possible"
+      ]
+    },
+    {
+      "title": "IELTS",
+      "text": "Intensive IELTS preparation course",
+      "description": "An intensive course for IELTS preparation. Focused on all sections of the exam: reading, listening, writing, speaking, and improving time management.",
+      "duration": "3 - 6 months",
+      "time": "80 minutes",
+      "format": "Mini-groups up to 6 people",
+      "age": "From 12 years old",
+      "features": [
+        "Program tailored to the IELTS exam",
+        "Regular MOCK exams"
+      ]
+    },
+    {
+      "title": "Kids",
+      "text": "English basics for kids",
+      "description": "The course aims to inspire children to study and learn English. Classes are conducted in a game format using Kahoot and Duolingo.",
+      "duration": "3 - 6 months",
+      "time": "60 minutes",
+      "format": "Mini-groups up to 6 people",
+      "age": "From 6 to 12 years old",
+      "features": [
+        "Lessons in a playful format",
+        "Convenient parental control"
+      ]
+    }
+  ]
+},
+
+  "reviews": {
+    "title": "Reviews",
+    "age": "Age",
+    "teacher": "Teacher",
+    "duration": "Duration",
+    "items": [
+      {
+        "agePlaceholder": "12 years old",
+        "teacherPlaceholder": "Mr. Owen",
+        "durationPlaceholder": "1 month"
+      },
+      {
+        "agePlaceholder": "16 years old",
+        "teacherPlaceholder": "Ms. Ted",
+        "durationPlaceholder": "3 months"
+      },
+      {
+        "agePlaceholder": "32 years old",
+        "teacherPlaceholder": "Mr. Owen",
+        "durationPlaceholder": "1 month"
+      },
+      {
+        "agePlaceholder": "22 years old",
+        "teacherPlaceholder": "Mr. Owen",
+        "durationPlaceholder": "3 months"
+      }
+    ]
+  },
+  "faq": {
+  "title": "F.A.Q.",
+  "list": [
+    {
+      "question": "How does the learning process work?",
+      "answer": "The learning is conducted online via Google Meets"
+    },
+    {
+      "question": "What do I need for the lessons?",
+      "answer": "All you need is internet access, a phone, laptop, or computer"
+    },
+    {
+      "question": "Do I need books?",
+      "answer": "No, all necessary materials are stored in the cloud, available 24/7"
+    },
+    {
+      "question": "When will I be able to speak?",
+      "answer": "Our students start using simple sentences during the first month of study"
+    },
+    {
+      "question": "What if I don't know my level?",
+      "answer": "During the trial lesson, the teacher will assess your level using a test"
+    },
+    {
+      "question": "How professional are the teachers?",
+      "answer": "Minimum requirements: IELTS 8, CEFR C1. Additionally, they are assessed by us separately"
+    }
+  ]
+},
+"footer": {
+  "title": "What are you waiting for?",
+  "button": "Enroll now",
+  "copied": "Copied!",
+  "copyright": "ⓒ LLC “EZ education”"
+}
 }

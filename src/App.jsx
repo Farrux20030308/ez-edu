@@ -14,14 +14,22 @@ const App = () => {
     const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    const handleLoad = () => {
-      setLoading(false)
-    }
+  const handleLoad = () => {
+    document.fonts.ready.then(() => {
+      setTimeout(() => {
+        setLoading(false)
+      }, 250)
+    })
+  }
 
+  if (document.readyState === 'complete') {
+    handleLoad()
+  } else {
     window.addEventListener('load', handleLoad)
-
     return () => window.removeEventListener('load', handleLoad)
-  }, [])
+  }
+}, [])
+
 
   if (loading) {
     return (

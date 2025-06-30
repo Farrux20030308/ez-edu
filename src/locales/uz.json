@@ -36,5 +36,155 @@
 "banner": {
     "title": "Ingliz tili — onlayn, oson va qulay",
     "slogan": "\"EZ education — o‘ylagandan ham osonroq\""
-  }
+  },
+  "forWho": {
+  "title": "Kurslar kimlar uchun",
+  "items": [
+    {
+      "title": "O‘qish",
+      "text": "Chet el oliy o‘quv yurtlariga kirishni istaganlar uchun"
+    },
+    {
+      "title": "Ish",
+      "text": "Xalqaro kompaniyalarda ishlash uchun"
+    },
+    {
+      "title": "Sayohat",
+      "text": "Dunyo bo‘ylab sayohat qilib, do‘stlar orttirishni istaganlar uchun"
+    },
+    {
+      "title": "Bolalar",
+      "text": "Bolalarda tilga qiziqishni uyg‘otish uchun"
+    }
+  ]
+},
+"coursesSheet": {
+  "description": "Qisqacha tavsif:",
+  "features": "Asosiy afzalliklar:",
+  "signup": "Ro'yxatdan o'tish"
+},
+"courses": {
+  "title": "Bizning kurslar",
+  "shortDescription": "Qisqacha tavsif:",
+  "keyFeatures": "Asosiy afzalliklar:",
+  "list": [
+    {
+      "title": "General",
+      "text": "Mini-guruhlarda darslar",
+      "description": "Umumiy ingliz tilini rivojlantirishga qaratilgan guruh mashg'ulotlari. Dasturlar Oksford va Kembrij universitetlari asosida ishlab chiqilgan.",
+      "duration": "12 - 16 oy",
+      "time": "80 daqiqa",
+      "format": "6 kishilik mini-guruh",
+      "age": "12 yoshdan boshlab",
+      "features": [
+        "Guruh darslariga mos kuchli dastur",
+        "Ravshan daraja ajratilishi (Beginner - Advanced)",
+        "Guruhda amaliyot"
+      ]
+    },
+    {
+      "title": "Individual",
+      "text": "O‘quvchining ehtiyojlariga moslashtirilgan darslar",
+      "description": "Boshlang‘ich daraja, maqsadlar, kuchsiz tomonlar va muddatlarga asoslangan individual yondashuv",
+      "duration": "3 - 18 oy",
+      "time": "80 daqiqa",
+      "format": "O‘qituvchi bilan birga",
+      "age": "12 yoshdan boshlab",
+      "features": [
+        "Shaxsiy yondashuv",
+        "Maksimal samaradorlik",
+        "Eng qisqa vaqt ichida natijalar"
+      ]
+    },
+    {
+      "title": "IELTS",
+      "text": "IELTS imtihoniga tayyorlov kursi",
+      "description": "IELTS imtihoniga tayyorlanish uchun intensiv kurs. Imtihonning barcha bo‘limlari — o‘qish, tinglab tushunish, yozish, gapirish va vaqtni boshqarishni yaxshilashga qaratilgan.",
+      "duration": "3 - 6 oy",
+      "time": "80 daqiqa",
+      "format": "6 kishilik mini-guruh",
+      "age": "12 yoshdan boshlab",
+      "features": [
+        "IELTS uchun maxsus ishlab chiqilgan dastur",
+        "Doimiy MOCK imtihonlar"
+      ]
+    },
+    {
+      "title": "Kids",
+      "text": "Bolalar uchun ingliz tili asoslari",
+      "description": "Kurs bolalarga ingliz tilini o‘rganishga qiziqish uyg‘otish uchun mo‘ljallangan. Darslar o‘yin shaklida Kahoot va Duolingo yordamida o‘tkaziladi.",
+      "duration": "3 - 6 oy",
+      "time": "60 daqiqa",
+      "format": "6 kishilik mini-guruh",
+      "age": "6 yoshdan 12 yoshgacha",
+      "features": [
+        "O‘yin shaklida darslar",
+        "Ota-onalar uchun qulay nazorat"
+      ]
+    }
+  ]
+},
+  "reviews": {
+    "title": "Tavsiflar",
+    "age": "Yoshi",
+    "teacher": "Oʻqituvchi",
+    "duration": "Davomiyligi",
+    "items": [
+      {
+        "agePlaceholder": "12 yosh",
+        "teacherPlaceholder": "Mr. Owen",
+        "durationPlaceholder": "1 oy"
+      },
+      {
+        "agePlaceholder": "16 yosh",
+        "teacherPlaceholder": "Ms. Ted",
+        "durationPlaceholder": "3 oy"
+      },
+      {
+        "agePlaceholder": "32 yosh",
+        "teacherPlaceholder": "Mr. Owen",
+        "durationPlaceholder": "1 oy"
+      },
+      {
+        "agePlaceholder": "22 yosh",
+        "teacherPlaceholder": "Mr. Owen",
+        "durationPlaceholder": "3 oy"
+      }
+    ]
+  },
+  "faq": {
+  "title": "Ko‘p so‘raladigan savollar",
+  "list": [
+    {
+      "question": "Ta’lim qanday olib boriladi?",
+      "answer": "Darslar Google Meets platformasida onlayn shaklda o'tkaziladi"
+    },
+    {
+      "question": "Darslar uchun nima kerak?",
+      "answer": "Faqatgina internet, telefon, noutbuk yoki kompyuter bo‘lsa kifoya"
+    },
+    {
+      "question": "Darsliklar kerakmi?",
+      "answer": "Yo‘q, barcha materiallar 24/7 mavjud bulutli saqlovda bo‘ladi"
+    },
+    {
+      "question": "Qachon gapira boshlayman?",
+      "answer": "O‘quvchilarimiz o‘qishning birinchi oyida oddiy gaplardan foydalana boshlashadi"
+    },
+    {
+      "question": "Darajamni bilmasamchi?",
+      "answer": "Sinov darsida o‘qituvchi maxsus test orqali sizning darajangizni aniqlaydi"
+    },
+    {
+      "question": "O‘qituvchilar qanchalik malakali?",
+      "answer": "Minimal talablar: IELTS 8, CEFR C1. Bundan tashqari, biz ularga alohida baho beramiz"
+    }
+  ]
+},
+"footer": {
+  "title": "Nimani kutyapsiz?",
+  "button": "Ro'yxatdan o'tish",
+  "copied": "Nusxalandi!",
+  "copyright": "ⓒ MCHJ “EZ education”"
+}
 }
