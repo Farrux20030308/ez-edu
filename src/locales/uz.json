@@ -28,9 +28,9 @@
   },
   "modal": {
   "call": "Qo‘ng‘iroq qilish",
-  "telegram": "Bizning Telegram",
-  "whatsapp": "Bizning WhatsApp",
-  "instagram": "Bizning Instagram",
+  "telegram": "Telegram",
+  "whatsapp": "WhatsApp",
+  "instagram": "Instagram",
   "gmail": "Gmail"
 },
 "banner": {
@@ -125,7 +125,7 @@
   ]
 },
   "reviews": {
-    "title": "Tavsiflar",
+    "title": "Sharhlar",
     "age": "Yoshi",
     "teacher": "Oʻqituvchi",
     "duration": "Davomiyligi",

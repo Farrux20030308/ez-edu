@@ -10,9 +10,9 @@
   },
   "modal": {
   "call": "Позвонить",
-  "telegram": "Наш Telegram",
-  "whatsapp": "Наш WhatsApp",
-  "instagram": "Наш Instagram",
+  "telegram": "Telegram",
+  "whatsapp": "WhatsApp",
+  "instagram": "Instagram",
   "gmail": "Почта Gmail"
 },
   "form": {

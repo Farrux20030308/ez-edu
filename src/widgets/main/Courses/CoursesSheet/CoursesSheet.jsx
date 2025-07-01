@@ -2,9 +2,9 @@ import { Sheet } from 'react-modal-sheet';
 import './CoursesSheet.css';
 import soon from '../../../../assets/icons/soon.png';
 import calendar from '../../../../assets/icons/calendar.svg';
-import cap from '../../../../assets/icons/cap.svg';
+import cap from '../../../../assets/icons/cap_icon.svg';
 import format from '../../../../assets/icons/format.svg';
-import time from '../../../../assets/icons/time.svg';
+import time from '../../../../assets/icons/time_icon.svg';
 import { Link } from 'react-scroll';
 import { useTranslation } from '../../../../contexts/I18nContext';
 

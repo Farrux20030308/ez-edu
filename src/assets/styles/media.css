@@ -96,7 +96,10 @@
 @media (max-width: 1058px) {
 	.banner{
 		max-width: 500px;
-
+		margin-block: 50px;
+	}
+	.banner__left{
+		height: max-content;
 	}
 	.courses{
 		max-width: 500px;
@@ -198,11 +201,15 @@
 	.faq-answer-inner{
 		font-size: 20px;
 	} 
+	
 }
 
-/* ========== 768px и меньше ========== */
+
 @media (max-width: 768px) {
-	
+	.banner{
+		margin-block: 0;
+	}
+
 	.courses h2{
 		font-size: 40px;
 	}
@@ -278,7 +285,7 @@
 		font-size: clamp(14px, 3vw, 22px);
 	}
 	.banner__video {
-		max-width: max-content;
+		max-width: 100%;
 	}
 	.for__who{
 		max-width: 500px;
@@ -527,7 +534,7 @@
 	.faq-question span{
 		max-width: 70%;
 		word-wrap: break-word;
-		font-size: clamp(14px, 4vw, 25px);
+		font-size: clamp(20px, 4vw, 25px);
 	}
 }
 	@media (max-width:400px) {
@@ -730,8 +737,9 @@
 		padding: 20px 15px;
 	}
 	.form-container h2{
-		font-size: 12px;
-		width: 170px;
+		font-weight: 800;
+		font-size: 14px;
+		width: 250px;
 	}
 	.banner__video{
 		width: 100%;
@@ -769,7 +777,7 @@
 		width: 120px;
 	}
 	.faq-question span{
-		font-size: clamp(12px, 2vw, 25px);
+		font-size: clamp(18px, 2vw, 25px);
 
 	}
 	.faq-question svg{

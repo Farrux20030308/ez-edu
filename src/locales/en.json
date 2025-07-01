@@ -10,9 +10,9 @@
   },
   "modal": {
   "call": "Call",
-  "telegram": "Our Telegram",
-  "whatsapp": "Our WhatsApp",
-  "instagram": "Our Instagram",
+  "telegram": "Telegram",
+  "whatsapp": "WhatsApp",
+  "instagram": "Instagram",
   "gmail": "Gmail"
 },
    "form": {

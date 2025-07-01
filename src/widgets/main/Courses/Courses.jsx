@@ -10,9 +10,9 @@ import paper from '../../../assets/img/paper.png';
 import toy_cube from '../../../assets/img/toy_cube.png';
 import soon from '../../../assets/icons/soon.png';
 import calendar from '../../../assets/icons/calendar.svg';
-import cap from '../../../assets/icons/cap.svg';
+import cap from '../../../assets/icons/cap_icon.svg';
 import format from '../../../assets/icons/format.svg';
-import time from '../../../assets/icons/time.svg';
+import time from '../../../assets/icons/time_icon.svg';
 
 const Courses = ({ onContactClick }) => {
   const { t } = useTranslation();
