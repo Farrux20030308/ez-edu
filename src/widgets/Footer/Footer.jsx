@@ -28,7 +28,20 @@ const Footer = () => {
       setTimeout(() => setShowEmailCopied(false), 2000);
     });
   };
+  const handleEmailClick = () => {
+  const email = 'admin@ez-education.com';
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
+  const link = isMobile
+    ? `mailto:${email}`
+    : `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+
+  if (isMobile) {
+    window.location.href = link;
+  } else {
+    window.open(link, '_blank');
+  }
+};
   return (
     <footer className='footer'>
       <div className="footer__title">
@@ -45,20 +58,18 @@ const Footer = () => {
           <button onClick={() => window.location.href = 'tel:+998979666111'}>
             <img src={phone} alt="Phone" />
           </button>
-          <button onClick={() => window.open('https://www.whatsapp.com', '_blank')}>
+          <button onClick={() => window.open('https://wa.me/qr/2HY7AHYW2ISWB1', '_blank')}>
             <img src={whatsapp} alt="WhatsApp" />
           </button>
-          <button onClick={() => window.open('https://www.telegram.com', '_blank')}>
+          <button onClick={() => window.open('https://t.me/ez_edu', '_blank')}>
             <img src={tg} alt="Telegram" />
           </button>
-          <button onClick={() => window.open('https://www.instagram.com', '_blank')}>
+          <button onClick={() => window.open('https://www.instagram.com/ez.educenter', '_blank')}>
             <img src={insta} alt="Instagram" />
           </button>
-          <button onClick={() =>
-            window.open('https://mail.google.com/mail/?view=cm&fs=1&to=admin@ez-education.com')
-          }>
-            <img src={mail} alt="Mail" />
-          </button>
+          <button onClick={() => handleEmailClick()}>
+  <img src={mail} alt="Mail" />
+</button>
           <div className='copy_mail' onClick={copyEmail} style={{ cursor: 'pointer' }}>
             {showEmailCopied ? t('footer.copied') : 'admin@ez-education.com'}
           </div>
