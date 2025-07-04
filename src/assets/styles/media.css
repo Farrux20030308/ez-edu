@@ -198,7 +198,7 @@
 		font-size: 16px;
 	}
 	.faq-answer-inner{
-		font-size: clamp(12px, 3vw, 18мpx);
+		font-size: clamp(12px, 3vw, 18px);
 		
 	} 
 	
