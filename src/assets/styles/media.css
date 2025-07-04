@@ -304,12 +304,12 @@
 	}
 	.courses-box-left{
 		justify-content: unset;
-			min-height: 100px !important;
-			height: 100% !important;
+			min-height: 100px ;
+			height: 100%;
 	}
 	.courses-box{
-		min-height: 100px !important;
-		height: 100% !important;
+		min-height: 100px ;
+		height: 100% ;
 	}
 	.reviews:hover{
 		transform: none;
@@ -367,11 +367,12 @@
 		width: 100px;
 	}
 	.courses-box-left{
-		height: 322px;
+		height: 100%;
+		min-height: 200px;
 	}
 	.courses-box{
-		min-height: 322px;
-		height: 322px;
+		min-height: 200px;
+		height: 100%;
 	}
 	
 	.contact-modal{
@@ -571,6 +572,7 @@
 	}
 	.courses-box{
 		width: 47%;
+		
 	}
 	
 	.courses-box .image{
@@ -604,7 +606,7 @@
 		height: 100%;
 	}
 	.courses-box-left{
-		height: 200px;
+		height: 200px ;
 		gap: 10px;
 
 	}
@@ -710,7 +712,7 @@
 		width: 100%;
 	}
 	.courses-box-left .image{
-		width: 60%;
+		width: 45%;
 	}
 	.for__who-box img{
 		width: 60%;
