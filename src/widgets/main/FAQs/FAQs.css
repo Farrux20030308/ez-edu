@@ -1,5 +1,5 @@
  .faq__wrapper{
-    min-height: 900px;
+    min-height: 650px;
  }
  .faq{
  
@@ -16,7 +16,7 @@
   background: rgba(255, 255, 255, 0.01);
   gap: 20px;
   overflow: hidden;
-  min-height: 600px;
+  min-height: 500px;
 transition: box-shadow .5s ease,scale .5s ease;
 }
 
@@ -33,7 +33,6 @@ line-height: 156%;
 
 color: #000;
 }
-
 .faq-item {
  border: 1px solid #9f9f9f;
 border-radius: 14px;

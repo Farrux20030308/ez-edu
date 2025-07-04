@@ -196,6 +196,7 @@
 	}
 	.faq-question span{
 		font-size: 16px;
+		font-weight: 600;
 	}
 	.faq-answer-inner{
 		font-size: clamp(12px, 3vw, 18px);
@@ -778,12 +779,10 @@
 		width: 120px;
 	}
 	.faq-question span{
-		font-size: clamp(18px, 2vw, 25px);
+		font-size: clamp(12px, 2vw, 18px);
 
 	}
-	.faq-question svg{
-		width: 30px;
-	}
+	
 	.faq-answer-inner{
 		font-size: 15px;
 	}
