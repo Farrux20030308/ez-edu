@@ -193,13 +193,13 @@
 	.faq-item svg{
 		flex-shrink: 0;
 		width: 45px;
-		margin-inline: 10px;
 	}
 	.faq-question span{
-		font-size: 25px;
+		font-size: 16px;
 	}
 	.faq-answer-inner{
-		font-size: 20px;
+		font-size: clamp(12px, 3vw, 18мpx);
+		
 	} 
 	
 }
@@ -533,9 +533,8 @@
 		font-size: 30px;
 	}
 	.faq-question span{
-		max-width: 70%;
-		word-wrap: break-word;
-		font-size: clamp(20px, 4vw, 25px);
+		max-width: 100%;
+		font-size: clamp(12px, 3vw, 18px);
 	}
 }
 	@media (max-width:400px) {

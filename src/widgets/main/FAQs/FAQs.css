@@ -42,7 +42,6 @@ background: #fff;
 }
 
 .faq-question {
-  padding: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,7 +51,9 @@ font-weight: 500;
 font-size: 30px;
 color: #000;
 }
-
+.faq-question span{
+  padding-left: 25px;
+}
 .faq-toggle {
   background: none;
   border: none;
