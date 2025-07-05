@@ -1,0 +1,55 @@
+.bg-items{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 150px;
+
+}
+
+.e-item{
+    top: 50px;
+    left: 10px;
+}
+.rocket{
+    right: 0px;
+    top: 70px;
+}
+.notebook{
+    top: 100vh;
+    right: 10px;
+    width: 100px;
+}
+.globus{
+    top: 105vh;
+    left: 10px;
+    width: 100px;
+}
+.ruler{
+    top: 170vh;
+}
+.abc{
+    top: 180vh;
+    right: 10px;
+}
+.microscope{
+    top: 250vh;
+    right: -5px;
+}
+.pencil{
+    top: 260vh;
+    width: 100px;
+}
+.backpacks{
+    top: 315vh;
+    right: 20px;
+}
+.pen{
+    top: 350vh;
+}
+.aplus{
+    top: 390vh;
+    right: 10px;
+}
+.lamp{
+    top: 460vh;
+}

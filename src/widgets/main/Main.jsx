@@ -1,3 +1,4 @@
+import BgItems from '../BgItems/BgItems';
 import Courses from './Courses/Courses';
 import FAQs from './FAQs/FAQs';
 import ForWho from './ForWho/ForWho';
@@ -14,6 +15,7 @@ const Main=({onContactClick})=>{
         <Courses onContactClick={onContactClick}/>
         <ReviewCard />
         <FAQs /> 
+        <BgItems />
         </main>
     )
 }

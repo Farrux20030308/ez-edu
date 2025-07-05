@@ -53,7 +53,7 @@ const ToggleIcon = ({ isActive }) => (
       y="0.5"
       width="55.2979"
       height="53"
-      rx="13.5"
+      rx="14"
       className="toggle-bg"
     />
     <path

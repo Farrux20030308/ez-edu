@@ -69,7 +69,7 @@
 		width: 100%;
 	}
 	.banner {
-		backdrop-filter: blur(1px);
+		backdrop-filter: blur(4px);
 	}
 	.form-container {
 		max-width: 450px;
@@ -192,7 +192,7 @@
 	}
 	.faq-item svg{
 		flex-shrink: 0;
-		width: 45px;
+		width: 43px;
 	}
 	.faq-question span{
 		font-size: 16px;
@@ -207,6 +207,14 @@
 
 
 @media (max-width: 768px) {
+	.main{
+		min-height: 200vh;
+	}
+
+	.faq__wrapper{
+		min-height: 615px;
+	}
+
 	.banner{
 		margin-block: 0;
 	}
@@ -537,6 +545,10 @@
 		max-width: 100%;
 		font-size: clamp(12px, 3vw, 18px);
 	}
+	.backpacks{
+    top: 315vh;
+    left: 20px;
+}
 }
 	@media (max-width:400px) {
 		.courses-wrapper{
@@ -687,6 +699,10 @@
 	.footer .contact button img{
 		width: 43px;
 	}
+	.lamp{
+    top: 400vh;
+}
+
 
 }
 @media (max-width:331px) {
