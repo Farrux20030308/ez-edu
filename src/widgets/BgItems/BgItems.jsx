@@ -45,7 +45,7 @@ const BgItems = () => {
           const maxOffset = document.body.scrollHeight - (offsetTop + height)
 
           visibilityData.push({
-            appearedAt: null, // когда элемент стал видимым
+            appearedAt: null, 
             maxOffset,
           })
         }
