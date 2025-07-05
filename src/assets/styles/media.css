@@ -202,6 +202,23 @@
 		font-size: clamp(12px, 3vw, 18px);
 		
 	} 
+	.backpacks{
+		top: 490vh;
+	}
+	.lamp{
+		top: 470vh;
+	}
+	.aplus{
+		top: 370vh;
+	}
+	.rocket{
+		top: 150px;
+		right: 100px;
+	}
+	.e-item{
+		top: 150px;
+		left: 100px;
+	}
 	
 }
 
@@ -355,12 +372,28 @@
 	.footer__sign{
 		display: none;
 	}
+	.rocket{
+		right: 0;
+		top: 90px;
+	}
+	.e-item{
+		left: 0;
+		top: 90px;
+	}
+	.aplus{
+		top: 380vh;
+	}
+	.backpacks{
+		top: 450vh;
+	}
+	.lamp{
+		top: 420vh;
+	}
 }
 
 @media (max-width: 558px) {
 	.courses{
 	width: 90% !important;
-
 	}
 	.left__image{
 		width: 70px !important;
@@ -458,6 +491,13 @@
 	.faq h2{
 		font-size: 35px;
 	}
+	.globus{
+		top: 130vh;
+	}
+	.notebook{
+		top: 90vh;
+		right: -20px;
+	}
 }
 @media (max-width:495px) {
 	
@@ -546,8 +586,8 @@
 		font-size: clamp(12px, 3vw, 18px);
 	}
 	.backpacks{
-    top: 315vh;
-    left: 20px;
+    top: 280vh;
+    right: 20px;
 }
 }
 	@media (max-width:400px) {

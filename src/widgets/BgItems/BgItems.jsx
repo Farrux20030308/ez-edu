@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import './BgItems.css'
 
 import microscope from '../../assets/img/microscope.png'
@@ -29,14 +30,67 @@ const items = [
 ]
 
 const BgItems = () => {
+  const refs = useRef([])
+
+  useEffect(() => {
+    const multipliers = items.map((_, index) => 0.08 + (index % 5) * 0.03)
+    const positions = []
+
+    const updatePositions = () => {
+      positions.length = 0
+      refs.current.forEach((el) => {
+        if (el) {
+          const offsetTop = el.offsetTop
+          const height = el.offsetHeight
+          const maxOffset = document.body.scrollHeight - (offsetTop + height)
+          positions.push({ offsetTop, height, maxOffset })
+        }
+      })
+    }
+
+    const isInViewport = (el) => {
+      const rect = el.getBoundingClientRect()
+      return rect.top < window.innerHeight && rect.bottom > 0
+    }
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+
+      refs.current.forEach((el, index) => {
+        if (el && positions[index] && isInViewport(el)) {
+          const multiplier = multipliers[index]
+          const offset = Math.min(scrollY * multiplier, positions[index].maxOffset)
+          el.style.transform = `translateY(${offset}px)`
+        }
+      })
+    }
+
+    updatePositions()
+    handleScroll()
+
+    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('resize', updatePositions)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', updatePositions)
+    }
+  }, [])
+
   return (
     <>
       {items.map((item, index) => (
         <img
           key={index}
+          ref={(el) => (refs.current[index] = el)}
           className={`bg-items ${item.className}`}
           src={item.src}
           alt={item.alt}
+          style={{
+            transform: 'translateY(0)',
+            transition: 'transform 0.1s linear',
+            pointerEvents: 'none',
+          }}
         />
       ))}
     </>
