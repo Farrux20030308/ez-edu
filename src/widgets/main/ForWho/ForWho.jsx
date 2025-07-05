@@ -3,13 +3,14 @@ import { useEffect, useState } from 'react';
 import plane from '../../../assets/img/plane.png';
 import books from '../../../assets/img/books.png';
 import hands from '../../../assets/img/hands.png';
+import horse from '../../../assets/img/horse.png';
 import { Element } from 'react-scroll';
 import { useTranslation } from '../../../contexts/I18nContext';
 
 const ForWho = () => {
   const { t } = useTranslation();
 
-  const images = [books, hands, plane, plane]; // порядок сохраняется
+  const images = [books, hands, plane, horse]; // порядок сохраняется
 
   const translatedData = t('forWho.items');
 

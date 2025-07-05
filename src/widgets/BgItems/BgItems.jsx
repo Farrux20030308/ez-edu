@@ -33,17 +33,21 @@ const BgItems = () => {
   const refs = useRef([])
 
   useEffect(() => {
-    const multipliers = items.map((_, index) => 0.08 + (index % 5) * 0.03)
-    const positions = []
+    const multipliers = items.map((_, index) => 0.09 + (index % 5) * 0.05)
+    const visibilityData = []
 
     const updatePositions = () => {
-      positions.length = 0
+      visibilityData.length = 0
       refs.current.forEach((el) => {
         if (el) {
           const offsetTop = el.offsetTop
           const height = el.offsetHeight
           const maxOffset = document.body.scrollHeight - (offsetTop + height)
-          positions.push({ offsetTop, height, maxOffset })
+
+          visibilityData.push({
+            appearedAt: null, // когда элемент стал видимым
+            maxOffset,
+          })
         }
       })
     }
@@ -57,9 +61,17 @@ const BgItems = () => {
       const scrollY = window.scrollY
 
       refs.current.forEach((el, index) => {
-        if (el && positions[index] && isInViewport(el)) {
-          const multiplier = multipliers[index]
-          const offset = Math.min(scrollY * multiplier, positions[index].maxOffset)
+        if (!el) return
+        const data = visibilityData[index]
+        const multiplier = multipliers[index]
+
+        if (isInViewport(el)) {
+          if (data.appearedAt === null) {
+            data.appearedAt = scrollY
+          }
+
+          const delta = scrollY - data.appearedAt
+          const offset = Math.min(delta * multiplier, data.maxOffset)
           el.style.transform = `translateY(${offset}px)`
         }
       })
