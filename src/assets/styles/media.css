@@ -225,7 +225,7 @@
 
 @media (max-width: 768px) {
 	.main{
-		min-height: 200vh;
+		min-height: 200dvh;
 	}
 
 	.faq__wrapper{
@@ -496,7 +496,7 @@
 	}
 	.notebook{
 		top: 90vh;
-		right: -20px;
+		right: 0px;
 	}
 }
 @media (max-width:495px) {

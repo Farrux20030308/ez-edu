@@ -6,7 +6,7 @@
   background-color: inherit;
   padding: 10px 54px;
   position: fixed;
-  top: 0;
+  top: 1px;
   background: #fff;
   box-shadow: 0 0 21px 0 rgba(0, 0, 0, 0.25);
   width: 100vw;
