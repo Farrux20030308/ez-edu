@@ -64,7 +64,7 @@ const Footer = () => {
           <button onClick={() => window.open('https://t.me/ez_edu', '_blank')}>
             <img src={tg} alt="Telegram" />
           </button>
-          <button onClick={() => window.open('https://www.instagram.com/ez.educenter', '_blank')}>
+          <button onClick={() => window.open('https://www.instagram.com/ez__education', '_blank')}>
             <img src={insta} alt="Instagram" />
           </button>
           <button onClick={() => handleEmailClick()}>
