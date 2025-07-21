@@ -40,7 +40,7 @@ const ContactModal = ({ onClose }) => {
 
           <div className="contact-item">
             <img src={instagram} alt="Instagram" />
-            <span><a href="https://www.instagram.com/ez.educenter" target="_blank" rel="noopener noreferrer">{t("modal.instagram")}</a></span>
+            <span><a href="https://www.instagram.com/ez__education" target="_blank" rel="noopener noreferrer">{t("modal.instagram")}</a></span>
           </div>
 
           <div className="contact-item">
